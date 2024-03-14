@@ -6,7 +6,7 @@
 /*   By: bda-mota <bda-mota@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 16:54:40 by bda-mota          #+#    #+#             */
-/*   Updated: 2024/03/14 18:18:33 by bda-mota         ###   ########.fr       */
+/*   Updated: 2024/03/14 19:23:36 by bda-mota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,28 +62,23 @@ void	has_double(t_stack **stack)
 		while (runner)
 		{
 			if (curr->value == runner->value)
+			{
+				deallocate(stack);
 				exit_error();
+			}
 			runner = runner->next;
 		}
 		curr = curr->next;
 	}
 }
 
-void	is_ordered(t_stack **stack)
+int	is_ordered(t_stack *stack)
 {
-	t_stack	*curr;
-	t_stack	*runner;
-
-	curr = *stack;
-	while (curr)
+	while (stack && stack->next)
 	{
-		runner = curr->next;
-		while (runner)
-		{
-			if (curr->value < runner->value)
-				exit_error();
-			runner = runner->next;
-		}
-		curr = curr->next;
+		if (stack->value > stack->next->value)
+			return (0);
+		stack = stack->next;
 	}
+	return (1);
 }

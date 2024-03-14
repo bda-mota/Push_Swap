@@ -6,7 +6,7 @@
 /*   By: bda-mota <bda-mota@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 17:45:58 by bda-mota          #+#    #+#             */
-/*   Updated: 2024/03/14 18:32:51 by bda-mota         ###   ########.fr       */
+/*   Updated: 2024/03/14 19:21:36 by bda-mota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,8 @@ static int	check_list(t_stack **stack, int argc, char **argv)
 {
 	transform_and_add(stack, argc, argv);
 	has_double(stack);
-	//is_ordered(stack);
+	if (is_ordered(*stack) == 1)
+		exit_error();
 	deallocate(stack);
 	return (0);
 }
@@ -70,7 +71,6 @@ static void	transform_and_add(t_stack **stack, int argc, char **argv)
 	i = 1;
 	while (i < argc)
 	{
-		ft_printf("%d\n", ft_atoi(argv[i]));
 		if (ft_atol(argv[i]) > MAX_INT || ft_atol(argv[i]) < MIN_INT)
 		{
 			deallocate(stack);
