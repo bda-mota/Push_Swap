@@ -1,20 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bda-mota <bda-mota@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/13 17:46:24 by bda-mota          #+#    #+#             */
-/*   Updated: 2024/03/14 12:40:42 by bda-mota         ###   ########.fr       */
+/*   Created: 2024/03/14 12:39:36 by bda-mota          #+#    #+#             */
+/*   Updated: 2024/03/14 12:41:12 by bda-mota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "../includes/push_swap.h"
 
-# include "../libft/src/libft.h"
-
-void	exit_error(void);
-
-#endif
+void	exit_error(void)
+{
+	ft_putstr_fd("Error\n", STDERR_FILENO);
+	exit(1);
+}

@@ -6,7 +6,7 @@
 /*   By: bda-mota <bda-mota@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 14:54:03 by bda-mota          #+#    #+#             */
-/*   Updated: 2024/03/13 17:39:43 by bda-mota         ###   ########.fr       */
+/*   Updated: 2024/03/14 15:13:06 by bda-mota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ char	*ft_strstr(const char *big, const char *little);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	**ft_split(char const *s, char c);
 int		ft_atoi(const char *nptr);
+int		ft_issign(char c);
 int		ft_isalnum(int c);
 int		ft_isalpha(int c);
 int		ft_isascii(int c);
@@ -84,56 +85,6 @@ void	ft_lstadd_back(t_list **lst, t_list *new);
 void	ft_lstdelone(t_list *lst, void (*del)(void*));
 void	ft_lstclear(t_list **lst, void (*del)(void*));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
-
-/*
-********************************************************************************
-								GET NEXT LINE
-*/
-
-typedef struct s_gnl
-{
-	char			c;
-	struct s_gnl	*next;
-}	t_gnl;
-
-typedef struct s_find
-{
-	char	buffer[BUFFER_SIZE];
-	int		pos;
-	int		bytes;
-	t_gnl	*str;
-}	t_find;
-
-// MANDATORY - GET_NEXT_LINE
-char	*get_next_line(int fd);
-char	*ft_transform(t_gnl *root, int len);
-void	ft_insert_end(t_gnl **root, char c);
-void	ft_dealloc(t_gnl **root);
-int		ft_build_line(t_find *file, t_gnl **root, int bytes);
-int		ft_read_file(int fd, t_find *file, t_gnl **root);
-int		ft_lstchr(t_gnl *root);
-
-// BONUS - GET_NEXT_LINE
-char	*get_next_line_bonus(int fd);
-char	*ft_transform_bonus(t_gnl *root, int len);
-void	ft_insert_end_bonus(t_gnl **root, char c);
-void	ft_dealloc_bonus(t_gnl **root);
-int		ft_build_line_bonus(t_find *file, t_gnl **root, int bytes);
-int		ft_read_file_bonus(int fd, t_find *file, t_gnl **root);
-int		ft_lstchr_bonus(t_gnl *root);
-
-/*
-********************************************************************************
-								GET FILE
-*/
-
-char	*get_file(int fd);
-char	*ft_transform_file(t_gnl *root, int len);
-void	ft_insert_end_file(t_gnl **root, char c);
-void	ft_dealloc_file(t_gnl **root);
-int		get_read_file(int fd, t_find *file, t_gnl **root);
-int		ft_lstchr_file(t_gnl *root);
-int		ft_build_file(t_find *file, t_gnl **root, int bytes);
 
 /*
 ********************************************************************************
