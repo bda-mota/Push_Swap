@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   char_functions.c                                   :+:      :+:    :+:   */
+/*   ftprint_char_functions.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bda-mota <bda-mota@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 18:17:32 by bda-mota          #+#    #+#             */
-/*   Updated: 2023/12/13 12:09:15 by bda-mota         ###   ########.fr       */
+/*   Updated: 2024/03/14 18:38:36 by bda-mota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_print_char(char c)
+int	ft_p_char(char c)
 {
 	return (write(1, &c, 1));
 }
 
-int	ft_print_string(char *str)
+int	ft_p_string(char *str)
 {
 	if (!str)
 		return (write(1, "(null)", 6));

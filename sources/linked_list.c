@@ -6,7 +6,7 @@
 /*   By: bda-mota <bda-mota@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 16:54:40 by bda-mota          #+#    #+#             */
-/*   Updated: 2024/03/14 17:11:35 by bda-mota         ###   ########.fr       */
+/*   Updated: 2024/03/14 18:18:33 by bda-mota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,14 +35,55 @@ void	insert_end(t_stack **stack, int value)
 	curr->next = new_node;
 }
 
-void	print_list(t_stack **stack)
+void	deallocate(t_stack **stack)
 {
+	t_stack	*aux;
 	t_stack	*curr;
 
 	curr = *stack;
 	while (curr)
 	{
-		ft_printf("%d\n", curr->value);
+		aux = curr;
+		curr = curr->next;
+		free(aux);
+	}
+	*stack = NULL;
+}
+
+void	has_double(t_stack **stack)
+{
+	t_stack	*curr;
+	t_stack	*runner;
+
+	curr = *stack;
+	while (curr)
+	{
+		runner = curr->next;
+		while (runner)
+		{
+			if (curr->value == runner->value)
+				exit_error();
+			runner = runner->next;
+		}
+		curr = curr->next;
+	}
+}
+
+void	is_ordered(t_stack **stack)
+{
+	t_stack	*curr;
+	t_stack	*runner;
+
+	curr = *stack;
+	while (curr)
+	{
+		runner = curr->next;
+		while (runner)
+		{
+			if (curr->value < runner->value)
+				exit_error();
+			runner = runner->next;
+		}
 		curr = curr->next;
 	}
 }

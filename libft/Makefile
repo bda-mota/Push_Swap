@@ -6,7 +6,7 @@
 #    By: bda-mota <bda-mota@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/16 15:55:15 by bda-mota          #+#    #+#              #
-#    Updated: 2024/03/14 16:33:05 by bda-mota         ###   ########.fr        #
+#    Updated: 2024/03/14 18:44:56 by bda-mota         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ CFILES	:= ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c ft_isascii.
 			ft_strdup.c ft_strlcat.c ft_strlcpy.c ft_strlen.c ft_strncmp.c ft_strnstr.c ft_strrchr.c \
 			ft_tolower.c ft_toupper.c ft_substr.c ft_strjoin.c ft_strtrim.c ft_itoa.c ft_strmapi.c \
 			ft_striteri.c ft_split.c ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c \
-			ft_printf.c ftprint_char_functions.c ftprint_number_functions.c ftprint_hex_functions.c \
+			ft_printf.c ft_char_functions.c ft_number_functions.c ft_hex_functions.c ft_atol.c \
 			ft_free_matrix.c ft_lstnew.c ft_lstadd_back.c ft_lstadd_front.c ft_lstlast.c ft_lstsize.c \
 			ft_lstclear.c ft_lstdelone.c ft_lstiter.c ft_lstmap.c ft_strcmp.c ft_strcat.c ft_issign.c
 
@@ -51,7 +51,6 @@ $(NAME): $(OBJS)
 	@echo "$(WHITE)   [Success] Done the compilation Libft.$(BOLD) "
 	@echo "$(PURPLE)-------------------------------------------"
 
-
 clean:
 	rm -f $(OBJS)
 
@@ -63,4 +62,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re 

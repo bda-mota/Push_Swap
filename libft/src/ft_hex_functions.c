@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   hex_functions.c                                    :+:      :+:    :+:   */
+/*   ftprint_hex_functions.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bda-mota <bda-mota@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 18:12:50 by bda-mota          #+#    #+#             */
-/*   Updated: 2023/12/13 11:05:44 by bda-mota         ###   ########.fr       */
+/*   Updated: 2024/03/14 18:41:06 by bda-mota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_print_lower_hex(unsigned int n)
+int	ft_p_lower_hex(unsigned int n)
 {
 	int		count;
 	char	*hex;
@@ -23,13 +23,13 @@ int	ft_print_lower_hex(unsigned int n)
 		count += write(1, &hex[n], 1);
 	else
 	{
-		count += ft_print_lower_hex(n / 16);
-		count += ft_print_lower_hex(n % 16);
+		count += ft_p_lower_hex(n / 16);
+		count += ft_p_lower_hex(n % 16);
 	}
 	return (count);
 }
 
-int	ft_print_upper_hex(unsigned int n)
+int	ft_p_upper_hex(unsigned int n)
 {
 	int		count;
 	char	*hex;
@@ -40,8 +40,8 @@ int	ft_print_upper_hex(unsigned int n)
 		count += write(1, &hex[n], 1);
 	else
 	{
-		count += ft_print_upper_hex(n / 16);
-		count += ft_print_upper_hex(n % 16);
+		count += ft_p_upper_hex(n / 16);
+		count += ft_p_upper_hex(n % 16);
 	}
 	return (count);
 }
@@ -63,7 +63,7 @@ static int	ft_aux_address(unsigned long p)
 	return (count);
 }
 
-int	ft_print_address(unsigned long p)
+int	ft_p_address(unsigned long p)
 {
 	if (p == 0)
 		return (write(1, "(nil)", 5));
