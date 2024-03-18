@@ -6,7 +6,7 @@
 /*   By: bda-mota <bda-mota@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 17:46:24 by bda-mota          #+#    #+#             */
-/*   Updated: 2024/03/18 13:09:53 by bda-mota         ###   ########.fr       */
+/*   Updated: 2024/03/18 15:47:31 by bda-mota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,9 @@ void	print_list(t_stack **stack);
 
 //LINKED_LIST
 void	insert_end(t_stack **stack, int value);
-void	has_double(t_stack **stack);
 void	deallocate(t_stack **stack);
+void	has_double(t_stack **stack);
+void	free_lists(t_push *push_swap);
 int		is_ordered(t_stack *stack);
 
 #endif

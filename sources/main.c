@@ -6,7 +6,7 @@
 /*   By: bda-mota <bda-mota@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 17:45:58 by bda-mota          #+#    #+#             */
-/*   Updated: 2024/03/18 15:37:31 by bda-mota         ###   ########.fr       */
+/*   Updated: 2024/03/18 15:51:27 by bda-mota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,7 @@ int	main(int argc, char **argv)
 	if (check_args(argc, argv) == 1)
 		exit_error();
 	check_list(&push_swap->stack_a, argc, argv);
-	deallocate(&push_swap->stack_a);
-	free(push_swap);
+	free_lists(push_swap);
 	return (0);
 }
 
@@ -88,7 +87,7 @@ static void	transform_and_add(t_stack **stack, int argc, char **argv)
 	{
 		if (ft_atol(argv[i]) > MAX_INT || ft_atol(argv[i]) < MIN_INT)
 		{
-			deallocate(stack);
+			//deallocate(stack);
 			exit_error();
 		}
 		else
