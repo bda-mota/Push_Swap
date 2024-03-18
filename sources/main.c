@@ -6,7 +6,7 @@
 /*   By: bda-mota <bda-mota@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 17:45:58 by bda-mota          #+#    #+#             */
-/*   Updated: 2024/03/18 17:26:05 by bda-mota         ###   ########.fr       */
+/*   Updated: 2024/03/18 17:54:23 by bda-mota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ int	main(int argc, char **argv)
 	init_lists(&push_swap);
 	check_args(argc, argv);
 	check_list(push_swap, argc, argv);
-	reverse_rotate_a(&push_swap->stack_a);
-	curr = push_swap->stack_a;
+	push_a(push_swap);
+	curr = push_swap->stack_b;
 	while (curr)
 	{
 		ft_printf("%d\n", curr->value);
