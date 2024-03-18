@@ -6,26 +6,38 @@
 /*   By: bda-mota <bda-mota@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 17:45:58 by bda-mota          #+#    #+#             */
-/*   Updated: 2024/03/14 19:51:22 by bda-mota         ###   ########.fr       */
+/*   Updated: 2024/03/18 13:27:21 by bda-mota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
+static void	init_lists(t_push **push_swap);
 static int	check_args(int argc, char **argv);
 static int	check_list(t_stack **stack, int argc, char **argv);
 static void	transform_and_add(t_stack **stack, int argc, char **argv);
 
 int	main(int argc, char **argv)
 {
-	t_stack	*stack;
+	t_push	*push_swap;
 
-	stack = NULL;
+	push_swap = NULL;
+	init_lists(&push_swap);
 	if (check_args(argc, argv) == 1)
 		exit_error();
-	check_list(&stack, argc, argv);
-	deallocate(&stack);
+	check_list(&push_swap->stack_a, argc, argv);
+	//deallocate(&push_swap);
 	return (0);
+}
+
+static void	init_lists(t_push **push_swap)
+{
+	*push_swap = (t_push*)malloc(sizeof(t_push));
+    if (*push_swap == NULL) {
+        exit(1);
+    }
+    (*push_swap)->stack_a = NULL;
+    (*push_swap)->stack_b = NULL;
 }
 
 static int	check_args(int argc, char **argv)

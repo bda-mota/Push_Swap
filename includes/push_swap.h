@@ -6,7 +6,7 @@
 /*   By: bda-mota <bda-mota@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 17:46:24 by bda-mota          #+#    #+#             */
-/*   Updated: 2024/03/14 19:19:54 by bda-mota         ###   ########.fr       */
+/*   Updated: 2024/03/18 13:09:53 by bda-mota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,13 @@ typedef struct s_stack
 	int				value;
 	struct s_stack	*next;
 }	t_stack;
+
+typedef struct push
+{
+	t_stack	*stack_a;
+	t_stack	*stack_b;
+} t_push;
+
 
 //UTILS
 void	exit_error(void);
