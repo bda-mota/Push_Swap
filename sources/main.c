@@ -6,7 +6,7 @@
 /*   By: bda-mota <bda-mota@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 17:45:58 by bda-mota          #+#    #+#             */
-/*   Updated: 2024/03/18 13:27:21 by bda-mota         ###   ########.fr       */
+/*   Updated: 2024/03/18 15:37:31 by bda-mota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,18 +26,18 @@ int	main(int argc, char **argv)
 	if (check_args(argc, argv) == 1)
 		exit_error();
 	check_list(&push_swap->stack_a, argc, argv);
-	//deallocate(&push_swap);
+	deallocate(&push_swap->stack_a);
+	free(push_swap);
 	return (0);
 }
 
 static void	init_lists(t_push **push_swap)
 {
 	*push_swap = (t_push*)malloc(sizeof(t_push));
-    if (*push_swap == NULL) {
-        exit(1);
-    }
-    (*push_swap)->stack_a = NULL;
-    (*push_swap)->stack_b = NULL;
+	if (*push_swap == NULL)
+		exit(1);
+	(*push_swap)->stack_a = NULL;
+	(*push_swap)->stack_b = NULL;
 }
 
 static int	check_args(int argc, char **argv)
