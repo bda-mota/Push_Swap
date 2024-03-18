@@ -6,7 +6,7 @@
 /*   By: bda-mota <bda-mota@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 17:45:58 by bda-mota          #+#    #+#             */
-/*   Updated: 2024/03/18 15:51:27 by bda-mota         ###   ########.fr       */
+/*   Updated: 2024/03/18 16:04:19 by bda-mota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 static void	init_lists(t_push **push_swap);
 static int	check_args(int argc, char **argv);
-static int	check_list(t_stack **stack, int argc, char **argv);
-static void	transform_and_add(t_stack **stack, int argc, char **argv);
+static int	check_list(t_push *push_swap, int argc, char **argv);
+static void	transform_and_add(t_push *push_swap, int argc, char **argv);
 
 int	main(int argc, char **argv)
 {
@@ -25,7 +25,7 @@ int	main(int argc, char **argv)
 	init_lists(&push_swap);
 	if (check_args(argc, argv) == 1)
 		exit_error();
-	check_list(&push_swap->stack_a, argc, argv);
+	check_list(push_swap, argc, argv);
 	free_lists(push_swap);
 	return (0);
 }
@@ -66,19 +66,19 @@ static int	check_args(int argc, char **argv)
 	return (0);
 }
 
-static int	check_list(t_stack **stack, int argc, char **argv)
+static int	check_list(t_push *push_swap, int argc, char **argv)
 {
-	transform_and_add(stack, argc, argv);
-	has_double(stack);
-	if (is_ordered(*stack) == 1)
+	transform_and_add(push_swap, argc, argv);
+	has_double(push_swap);
+	if (is_ordered(push_swap->stack_a) == 1)
 	{
-		deallocate(stack);
+		free_lists(push_swap);
 		exit_error();
 	}
 	return (0);
 }
 
-static void	transform_and_add(t_stack **stack, int argc, char **argv)
+static void	transform_and_add(t_push *push_swap, int argc, char **argv)
 {
 	int	i;
 
@@ -87,11 +87,11 @@ static void	transform_and_add(t_stack **stack, int argc, char **argv)
 	{
 		if (ft_atol(argv[i]) > MAX_INT || ft_atol(argv[i]) < MIN_INT)
 		{
-			//deallocate(stack);
+			free_lists(push_swap);
 			exit_error();
 		}
 		else
-			insert_end(stack, ft_atol(argv[i]));
+			insert_end(&push_swap->stack_a, ft_atol(argv[i]));
 		i++;
 	}
 }
