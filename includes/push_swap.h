@@ -6,7 +6,7 @@
 /*   By: bda-mota <bda-mota@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 17:46:24 by bda-mota          #+#    #+#             */
-/*   Updated: 2024/03/18 16:58:10 by bda-mota         ###   ########.fr       */
+/*   Updated: 2024/03/18 17:13:31 by bda-mota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,5 +48,8 @@ void	swap_a(t_stack **stack_a);
 
 //ROTATE 
 void	rotate_a(t_stack **stack_a);
+
+//REVERSE ROTATE
+void	reverse_rotate_a(t_stack **stack_a);
 
 #endif
