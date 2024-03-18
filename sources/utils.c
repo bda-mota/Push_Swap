@@ -6,7 +6,7 @@
 /*   By: bda-mota <bda-mota@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 12:39:36 by bda-mota          #+#    #+#             */
-/*   Updated: 2024/03/14 17:49:02 by bda-mota         ###   ########.fr       */
+/*   Updated: 2024/03/18 16:14:28 by bda-mota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	exit_error(void)
 {
 	ft_putstr_fd("Error\n", STDERR_FILENO);
-	exit(1);
+	exit(EXIT_FAILURE);
 }
 
 void	print_list(t_stack **stack)

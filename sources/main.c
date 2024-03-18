@@ -6,7 +6,7 @@
 /*   By: bda-mota <bda-mota@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 17:45:58 by bda-mota          #+#    #+#             */
-/*   Updated: 2024/03/18 16:04:19 by bda-mota         ###   ########.fr       */
+/*   Updated: 2024/03/18 16:14:10 by bda-mota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,7 @@ int	main(int argc, char **argv)
 
 	push_swap = NULL;
 	init_lists(&push_swap);
-	if (check_args(argc, argv) == 1)
-		exit_error();
+	check_args(argc, argv);
 	check_list(push_swap, argc, argv);
 	free_lists(push_swap);
 	return (0);
@@ -47,18 +46,18 @@ static int	check_args(int argc, char **argv)
 	i = 1;
 	j = 0;
 	if (argc < 2)
-		exit(1);
+		exit_error();
 	while (argv[i] && i < argc)
 	{
 		if (ft_strcmp(argv[i], "") == 0)
-			return (1);
+			exit_error();
 		j = 0;
 		while (argv[i][j])
 		{
 			if (ft_issign(argv[i][0]) && j == 0)
 				j++;
 			if (!ft_isdigit(argv[i][j]))
-				return (1);
+				exit_error();
 			j++;
 		}
 		i++;
