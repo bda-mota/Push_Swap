@@ -6,7 +6,7 @@
 /*   By: bda-mota <bda-mota@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 17:45:58 by bda-mota          #+#    #+#             */
-/*   Updated: 2024/03/18 16:14:10 by bda-mota         ###   ########.fr       */
+/*   Updated: 2024/03/18 16:52:20 by bda-mota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,19 @@ static void	transform_and_add(t_push *push_swap, int argc, char **argv);
 int	main(int argc, char **argv)
 {
 	t_push	*push_swap;
-
+	t_stack	*curr;
+	
 	push_swap = NULL;
 	init_lists(&push_swap);
 	check_args(argc, argv);
 	check_list(push_swap, argc, argv);
+	rotate_a(&push_swap->stack_a);
+	curr = push_swap->stack_a;
+	while (curr)
+	{
+		ft_printf("%d\n", curr->value);
+		curr = curr->next;
+	}
 	free_lists(push_swap);
 	return (0);
 }
