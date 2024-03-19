@@ -6,7 +6,7 @@
 /*   By: bda-mota <bda-mota@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 16:22:27 by bda-mota          #+#    #+#             */
-/*   Updated: 2024/03/19 14:02:08 by bda-mota         ###   ########.fr       */
+/*   Updated: 2024/03/19 14:32:28 by bda-mota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,5 +39,14 @@ void	swap_b(t_stack **stack_b)
 		first->next = second->next;
 		second->next = first;
 		(*stack_b) = second;
+	}
+}
+
+void	swap_stacks(t_push *push_swap)
+{
+	if (push_swap->stack_a != NULL && push_swap->stack_b != NULL)
+	{
+		swap_a(&(push_swap->stack_a));
+		swap_b(&(push_swap->stack_b));
 	}
 }

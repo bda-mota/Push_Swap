@@ -6,7 +6,7 @@
 /*   By: bda-mota <bda-mota@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 17:46:24 by bda-mota          #+#    #+#             */
-/*   Updated: 2024/03/19 14:03:29 by bda-mota         ###   ########.fr       */
+/*   Updated: 2024/03/19 14:42:05 by bda-mota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ t_stack	*stack_last(t_stack *lst);
 //SWAP
 void	swap_a(t_stack **stack_a);
 void	swap_b(t_stack **stack_b);
+void	swap_stacks(t_push *push_swap);
 
 //PUSH
 void	push_a(t_push *push_swap);
@@ -55,9 +56,11 @@ void	push_b(t_push *push_swap);
 //ROTATE 
 void	rotate_a(t_stack **stack_a);
 void	rotate_b(t_stack **stack_b);
+void	rotate_stacks(t_push *push_swap);
 
 //REVERSE ROTATE
 void	reverse_rotate_a(t_stack **stack_a);
 void	reverse_rotate_b(t_stack **stack_b);
+void	reverse_rotate_stacks(t_push *push_swap);
 
 #endif
