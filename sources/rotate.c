@@ -6,7 +6,7 @@
 /*   By: bda-mota <bda-mota@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 16:50:40 by bda-mota          #+#    #+#             */
-/*   Updated: 2024/03/18 17:04:17 by bda-mota         ###   ########.fr       */
+/*   Updated: 2024/03/19 14:02:46 by bda-mota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,21 @@ void	rotate_a(t_stack **stack_a)
 		first = (*stack_a);
 		last = stack_last(*stack_a);
 		*stack_a = first->next;
+		first->next = NULL;
+		last->next = first;
+	}
+}
+
+void	rotate_b(t_stack **stack_b)
+{
+	t_stack	*first;
+	t_stack	*last;
+
+	if (*stack_b != NULL && (*stack_b)->next != NULL)
+	{
+		first = (*stack_b);
+		last = stack_last(*stack_b);
+		*stack_b = first->next;
 		first->next = NULL;
 		last->next = first;
 	}
