@@ -6,7 +6,7 @@
 /*   By: bda-mota <bda-mota@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 17:46:24 by bda-mota          #+#    #+#             */
-/*   Updated: 2024/03/20 15:53:30 by bda-mota         ###   ########.fr       */
+/*   Updated: 2024/03/20 17:06:20 by bda-mota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,15 @@ typedef struct push
 {
 	int		size_a;
 	int		size_b;
+	int		min_value;
+	int		max_value;
 	t_stack	*stack_a;
 	t_stack	*stack_b;
 }	t_push;
 
 void	get_size(t_push *push);
 void	sort_three(t_push **push);
+void	push_swap(t_push **push);
 
 //UTILS
 void	exit_error(void);
@@ -47,6 +50,8 @@ void	has_double(t_push *push);
 void	free_lists(t_push *push);
 int		is_ordered(t_stack *stack);
 int		get_stack_size(t_stack *stack);
+int		get_max(t_stack *stack);
+int		get_min(t_stack *stack);
 t_stack	*stack_last(t_stack *lst);
 
 //SWAP
