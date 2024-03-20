@@ -6,7 +6,7 @@
 /*   By: bda-mota <bda-mota@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 16:54:40 by bda-mota          #+#    #+#             */
-/*   Updated: 2024/03/20 11:23:16 by bda-mota         ###   ########.fr       */
+/*   Updated: 2024/03/20 14:44:08 by bda-mota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,28 +35,28 @@ void	insert_end(t_stack **stack, int value)
 	curr->next = new_node;
 }
 
-void	free_lists(t_push *push_swap)
+void	free_lists(t_push *push)
 {
 	t_stack	*curr;
 	t_stack	*temp;
 
-	curr = push_swap->stack_a;
+	curr = push->stack_a;
 	while (curr != NULL)
 	{
 		temp = curr;
 		curr = curr->next;
 		free(temp);
 	}
-	push_swap->stack_a = NULL;
-	curr = push_swap->stack_b;
+	push->stack_a = NULL;
+	curr = push->stack_b;
 	while (curr != NULL)
 	{
 		temp = curr;
 		curr = curr->next;
 		free(temp);
 	}
-	push_swap->stack_b = NULL;
-	free(push_swap);
+	push->stack_b = NULL;
+	free(push);
 }
 
 void	deallocate(t_stack **stack)

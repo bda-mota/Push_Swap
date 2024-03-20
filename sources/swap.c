@@ -6,7 +6,7 @@
 /*   By: bda-mota <bda-mota@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 16:22:27 by bda-mota          #+#    #+#             */
-/*   Updated: 2024/03/20 11:24:44 by bda-mota         ###   ########.fr       */
+/*   Updated: 2024/03/20 14:48:34 by bda-mota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,11 +42,11 @@ void	swap_b(t_stack **stack_b)
 	}
 }
 
-void	swap_stacks(t_push *push_swap)
+void	swap_stacks(t_push *push)
 {
-	if (push_swap->stack_a != NULL && push_swap->stack_b != NULL)
+	if (push->stack_a != NULL && push->stack_b != NULL)
 	{
-		swap_a(&(push_swap->stack_a));
-		swap_b(&(push_swap->stack_b));
+		swap_a(&(push->stack_a));
+		swap_b(&(push->stack_b));
 	}
 }

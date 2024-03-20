@@ -6,7 +6,7 @@
 /*   By: bda-mota <bda-mota@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 17:46:24 by bda-mota          #+#    #+#             */
-/*   Updated: 2024/03/20 11:22:26 by bda-mota         ###   ########.fr       */
+/*   Updated: 2024/03/20 14:43:30 by bda-mota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ typedef struct s_stack
 
 typedef struct push
 {
+	int		size_a;
+	int		size_b;
 	t_stack	*stack_a;
 	t_stack	*stack_b;
 }	t_push;
@@ -39,28 +41,29 @@ void	print_list(t_stack **stack);
 void	insert_beginning(t_stack **stack, t_stack *new);
 void	insert_end(t_stack **stack, int value);
 void	deallocate(t_stack **stack);
-void	has_double(t_push *push_swap);
-void	free_lists(t_push *push_swap);
+void	has_double(t_push *push);
+void	free_lists(t_push *push);
 int		is_ordered(t_stack *stack);
+int		get_stack_size(t_stack *stack);
 t_stack	*stack_last(t_stack *lst);
 
 //SWAP
 void	swap_a(t_stack **stack_a);
 void	swap_b(t_stack **stack_b);
-void	swap_stacks(t_push *push_swap);
+void	swap_stacks(t_push *push);
 
 //PUSH
-void	push_a(t_push *push_swap);
-void	push_b(t_push *push_swap);
+void	push_a(t_push *push);
+void	push_b(t_push *push);
 
 //ROTATE
 void	rotate_a(t_stack **stack_a);
 void	rotate_b(t_stack **stack_b);
-void	rotate_stacks(t_push *push_swap);
+void	rotate_stacks(t_push *push);
 
 //REVERSE ROTATE
 void	reverse_rotate_a(t_stack **stack_a);
 void	reverse_rotate_b(t_stack **stack_b);
-void	reverse_rotate_stacks(t_push *push_swap);
+void	reverse_rotate_stacks(t_push *push);
 
 #endif
