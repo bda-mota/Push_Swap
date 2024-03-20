@@ -6,7 +6,7 @@
 /*   By: bda-mota <bda-mota@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 17:46:24 by bda-mota          #+#    #+#             */
-/*   Updated: 2024/03/19 14:42:05 by bda-mota         ###   ########.fr       */
+/*   Updated: 2024/03/20 11:22:26 by bda-mota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ typedef struct push
 {
 	t_stack	*stack_a;
 	t_stack	*stack_b;
-} t_push;
+}	t_push;
 
 
 //UTILS
@@ -53,7 +53,7 @@ void	swap_stacks(t_push *push_swap);
 void	push_a(t_push *push_swap);
 void	push_b(t_push *push_swap);
 
-//ROTATE 
+//ROTATE
 void	rotate_a(t_stack **stack_a);
 void	rotate_b(t_stack **stack_b);
 void	rotate_stacks(t_push *push_swap);

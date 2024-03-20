@@ -6,7 +6,7 @@
 /*   By: bda-mota <bda-mota@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 16:54:40 by bda-mota          #+#    #+#             */
-/*   Updated: 2024/03/18 17:49:49 by bda-mota         ###   ########.fr       */
+/*   Updated: 2024/03/20 11:23:16 by bda-mota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,26 +37,26 @@ void	insert_end(t_stack **stack, int value)
 
 void	free_lists(t_push *push_swap)
 {
-	t_stack *curr;
+	t_stack	*curr;
 	t_stack	*temp;
-	
+
 	curr = push_swap->stack_a;
-	while (curr != NULL) 
+	while (curr != NULL)
 	{
 		temp = curr;
 		curr = curr->next;
 		free(temp);
-    }
+	}
 	push_swap->stack_a = NULL;
-    curr = push_swap->stack_b;
-    while (curr != NULL) 
+	curr = push_swap->stack_b;
+	while (curr != NULL)
 	{
 		temp = curr;
 		curr = curr->next;
 		free(temp);
-    }
-    push_swap->stack_b = NULL;
-    free(push_swap);
+	}
+	push_swap->stack_b = NULL;
+	free(push_swap);
 }
 
 void	deallocate(t_stack **stack)
@@ -74,6 +74,12 @@ void	deallocate(t_stack **stack)
 	*stack = NULL;
 }
 
+void	insert_beginning(t_stack **stack, t_stack *new)
+{
+	new->next = *stack;
+	*stack = new;
+}
+
 t_stack	*stack_last(t_stack *lst)
 {
 	if (lst == NULL)
@@ -83,8 +89,3 @@ t_stack	*stack_last(t_stack *lst)
 	return (lst);
 }
 
-void	insert_beginning(t_stack **stack, t_stack *new)
-{
-	new->next = *stack;
-	*stack = new;
-}

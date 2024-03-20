@@ -6,7 +6,7 @@
 /*   By: bda-mota <bda-mota@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 17:45:58 by bda-mota          #+#    #+#             */
-/*   Updated: 2024/03/19 14:41:38 by bda-mota         ###   ########.fr       */
+/*   Updated: 2024/03/20 11:24:00 by bda-mota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	main(int argc, char **argv)
 {
 	t_push	*push_swap;
 	t_stack	*curr;
-	
+
 	push_swap = NULL;
 	init_lists(&push_swap);
 	check_args(argc, argv);
@@ -49,7 +49,7 @@ int	main(int argc, char **argv)
 
 static void	init_lists(t_push **push_swap)
 {
-	*push_swap = (t_push*)malloc(sizeof(t_push));
+	*push_swap = malloc(sizeof(t_push));
 	if (*push_swap == NULL)
 		exit(1);
 	(*push_swap)->stack_a = NULL;
