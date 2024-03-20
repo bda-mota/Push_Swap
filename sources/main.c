@@ -6,14 +6,14 @@
 /*   By: bda-mota <bda-mota@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 17:45:58 by bda-mota          #+#    #+#             */
-/*   Updated: 2024/03/20 16:04:07 by bda-mota         ###   ########.fr       */
+/*   Updated: 2024/03/20 20:01:52 by bda-mota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-static void	init_lists(t_push **push);
-static int	check_args(int argc, char **argv);
+static void	init_list(t_push **push);
+static void	check_args(t_push *push, int argc, char **argv);
 static int	check_list(t_push *push, int argc, char **argv);
 static void	transform_and_add(t_push *push, int argc, char **argv);
 
@@ -22,12 +22,11 @@ int	main(int argc, char **argv)
 	t_push	*push;
 	t_stack	*curr;
 
-	push = NULL;
-	init_lists(&push);
-	check_args(argc, argv);
-	check_list(push, argc, argv);
+	init_list(&push);
+	check_args(push, argc, argv);
 	push_swap(&push);
 	curr = push->stack_a;
+	ft_printf("STACK A:\n");
 	while (curr)
 	{
 		ft_printf("%d\n", curr->value);
@@ -44,16 +43,18 @@ int	main(int argc, char **argv)
 	return (0);
 }
 
-static void	init_lists(t_push **push)
+static void	init_list(t_push **push)
 {
 	*push = malloc(sizeof(t_push));
 	if (*push == NULL)
 		exit(1);
 	(*push)->stack_a = NULL;
 	(*push)->stack_b = NULL;
+	(*push)->size_a = 0;
+	(*push)->size_b = 0;
 }
 
-static int	check_args(int argc, char **argv)
+static void	check_args(t_push *push, int argc, char **argv)
 {
 	int	i;
 	int	j;
@@ -77,7 +78,7 @@ static int	check_args(int argc, char **argv)
 		}
 		i++;
 	}
-	return (0);
+	check_list(push, argc, argv);
 }
 
 static int	check_list(t_push *push, int argc, char **argv)
@@ -97,6 +98,7 @@ static void	transform_and_add(t_push *push, int argc, char **argv)
 	int	i;
 
 	i = 1;
+	init_stack(&push->stack_a);
 	while (i < argc)
 	{
 		if (ft_atol(argv[i]) > MAX_INT || ft_atol(argv[i]) < MIN_INT)

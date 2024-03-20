@@ -6,7 +6,7 @@
 /*   By: bda-mota <bda-mota@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 14:55:40 by bda-mota          #+#    #+#             */
-/*   Updated: 2024/03/20 17:35:44 by bda-mota         ###   ########.fr       */
+/*   Updated: 2024/03/20 19:01:39 by bda-mota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,10 @@
 
 void	push_swap(t_push **push)
 {
-	sort_three(push);
-	return ;
-}
-
-void	get_size(t_push *push)
-{
-	push->size_a = get_stack_size(push->stack_a);
-	push->size_b = get_stack_size(push->stack_b);
+	if (get_stack_size((*push)->stack_a) <= 3)
+		sort_three(push);
+	else
+		sort_many(push);
 }
 
 void	sort_three(t_push **push)
@@ -33,4 +29,11 @@ void	sort_three(t_push **push)
 		rra(*push);
 	if ((*push)->stack_a->value > (*push)->stack_a->next->value)
 		sa(*push);
+}
+
+void	sort_many(t_push **push)
+{
+	while (get_stack_size((*push)->stack_a) > 3)
+		pb(*push);
+	sort_three(push);
 }

@@ -6,7 +6,7 @@
 /*   By: bda-mota <bda-mota@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 12:39:36 by bda-mota          #+#    #+#             */
-/*   Updated: 2024/03/18 16:14:28 by bda-mota         ###   ########.fr       */
+/*   Updated: 2024/03/20 20:03:57 by bda-mota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,4 +28,18 @@ void	print_list(t_stack **stack)
 		ft_printf("%d\n", curr->value);
 		curr = curr->next;
 	}
+}
+
+void	init_stack(t_stack **stack)
+{
+	*stack = malloc(sizeof(t_stack));
+	if (!(*stack))
+		return ;
+	(*stack)->value = 0;
+	(*stack)->index = 0;
+	(*stack)->pos = 0;
+	(*stack)->target_pos = 0;
+	(*stack)->cost_a = 0;
+	(*stack)->cost_b = 0;
+	(*stack)->next = NULL;
 }

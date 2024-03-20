@@ -6,7 +6,7 @@
 /*   By: bda-mota <bda-mota@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 16:54:40 by bda-mota          #+#    #+#             */
-/*   Updated: 2024/03/20 14:44:08 by bda-mota         ###   ########.fr       */
+/*   Updated: 2024/03/20 19:28:09 by bda-mota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,25 +37,8 @@ void	insert_end(t_stack **stack, int value)
 
 void	free_lists(t_push *push)
 {
-	t_stack	*curr;
-	t_stack	*temp;
-
-	curr = push->stack_a;
-	while (curr != NULL)
-	{
-		temp = curr;
-		curr = curr->next;
-		free(temp);
-	}
-	push->stack_a = NULL;
-	curr = push->stack_b;
-	while (curr != NULL)
-	{
-		temp = curr;
-		curr = curr->next;
-		free(temp);
-	}
-	push->stack_b = NULL;
+	deallocate(&push->stack_a);
+	deallocate(&push->stack_b);
 	free(push);
 }
 
