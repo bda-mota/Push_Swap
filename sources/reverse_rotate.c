@@ -6,7 +6,7 @@
 /*   By: bda-mota <bda-mota@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 17:12:31 by bda-mota          #+#    #+#             */
-/*   Updated: 2024/03/20 16:16:35 by bda-mota         ###   ########.fr       */
+/*   Updated: 2024/03/20 20:13:33 by bda-mota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,23 +32,23 @@ void	reverse_rotate(t_stack **stack)
 	}
 }
 
-void	rra(t_push *push)
+void	rra(t_push *stacks)
 {
-	reverse_rotate(&push->stack_a);
+	reverse_rotate(&stacks->stack_a);
 	ft_printf("rra\n");
 }
 
-void	rrb(t_push *push)
+void	rrb(t_push *stacks)
 {
-	reverse_rotate(&push->stack_b);
+	reverse_rotate(&stacks->stack_b);
 	ft_printf("rrb\n");
 }
 
-void	rrr(t_push *push)
+void	rrr(t_push *stacks)
 {
-	if (push->stack_a != NULL)
-		reverse_rotate(&push->stack_a);
-	if (push->stack_b != NULL)
-		reverse_rotate(&push->stack_b);
+	if (stacks->stack_a != NULL)
+		reverse_rotate(&stacks->stack_a);
+	if (stacks->stack_b != NULL)
+		reverse_rotate(&stacks->stack_b);
 	ft_printf("rrr\n");
 }

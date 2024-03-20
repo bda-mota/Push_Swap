@@ -6,18 +6,18 @@
 /*   By: bda-mota <bda-mota@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 16:56:11 by bda-mota          #+#    #+#             */
-/*   Updated: 2024/03/20 17:10:09 by bda-mota         ###   ########.fr       */
+/*   Updated: 2024/03/20 20:10:07 by bda-mota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	has_double(t_push *push)
+void	has_double(t_push *stacks)
 {
 	t_stack	*curr;
 	t_stack	*runner;
 
-	curr = push->stack_a;
+	curr = stacks->stack_a;
 	while (curr)
 	{
 		runner = curr->next;
@@ -25,7 +25,7 @@ void	has_double(t_push *push)
 		{
 			if (curr->value == runner->value)
 			{
-				free_lists(push);
+				free_lists(stacks);
 				exit_error();
 			}
 			runner = runner->next;
