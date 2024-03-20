@@ -6,47 +6,42 @@
 /*   By: bda-mota <bda-mota@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 16:50:40 by bda-mota          #+#    #+#             */
-/*   Updated: 2024/03/20 14:48:24 by bda-mota         ###   ########.fr       */
+/*   Updated: 2024/03/20 15:54:30 by bda-mota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	rotate_a(t_stack **stack_a)
+void	rotate(t_stack **stack)
 {
 	t_stack	*first;
 	t_stack	*last;
 
-	if (*stack_a != NULL && (*stack_a)->next != NULL)
+	if (*stack != NULL && (*stack)->next != NULL)
 	{
-		first = (*stack_a);
-		last = stack_last(*stack_a);
-		*stack_a = first->next;
+		first = (*stack);
+		last = stack_last(*stack);
+		*stack = first->next;
 		first->next = NULL;
 		last->next = first;
 	}
 }
 
-void	rotate_b(t_stack **stack_b)
+void	ra(t_push *push)
 {
-	t_stack	*first;
-	t_stack	*last;
-
-	if (*stack_b != NULL && (*stack_b)->next != NULL)
-	{
-		first = (*stack_b);
-		last = stack_last(*stack_b);
-		*stack_b = first->next;
-		first->next = NULL;
-		last->next = first;
-	}
+	rotate(&push->stack_a);
 }
 
-void	rotate_stacks(t_push *push)
+void	rb(t_push *push)
 {
-	if (push->stack_a != NULL && push->stack_b != NULL)
-	{
-		rotate_a(&(push->stack_a));
-		rotate_b(&(push->stack_b));
-	}
+	rotate(&push->stack_b);
+}
+
+
+void	rr(t_push *push)
+{
+	if (push->stack_a != NULL)
+		rotate(&(push->stack_a));
+	if (push->stack_b != NULL)
+		rotate(&(push->stack_b));
 }

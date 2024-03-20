@@ -6,7 +6,7 @@
 /*   By: bda-mota <bda-mota@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 17:45:58 by bda-mota          #+#    #+#             */
-/*   Updated: 2024/03/20 14:50:54 by bda-mota         ###   ########.fr       */
+/*   Updated: 2024/03/20 15:59:50 by bda-mota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,5 +107,4 @@ static void	transform_and_add(t_push *push, int argc, char **argv)
 			insert_end(&push->stack_a, ft_atol(argv[i]));
 		i++;
 	}
-	push->size_a = get_stack_size(push->stack_a);
 }

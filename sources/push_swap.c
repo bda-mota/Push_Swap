@@ -1,37 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push.c                                             :+:      :+:    :+:   */
+/*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bda-mota <bda-mota@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/18 17:35:22 by bda-mota          #+#    #+#             */
-/*   Updated: 2024/03/20 15:45:48 by bda-mota         ###   ########.fr       */
+/*   Created: 2024/03/20 14:55:40 by bda-mota          #+#    #+#             */
+/*   Updated: 2024/03/20 15:23:57 by bda-mota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	pa(t_push *push)
+void	push_swap(t_push **push)
 {
-	t_stack	*first_b;
-
-	if (push->stack_b != NULL)
-	{
-		first_b = push->stack_b;
-		push->stack_b = first_b->next;
-		insert_beginning(&(push->stack_a), first_b);
-	}
+	//sort_three(&push);
 }
 
-void	pb(t_push *push)
+void	get_size(t_push *push)
 {
-	t_stack	*first_a;
-
-	if (push->stack_a != NULL)
-	{
-		first_a = push->stack_a;
-		push->stack_a = first_a->next;
-		insert_beginning(&(push->stack_b), first_a);
-	}
+	push->size_a = get_stack_size(push->stack_a);
+	push->size_b = get_stack_size(push->stack_b);
 }
+
+// void	sort_three(t_push **push)
+// {
+
+// }
