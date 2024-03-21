@@ -6,7 +6,7 @@
 /*   By: bda-mota <bda-mota@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 16:56:11 by bda-mota          #+#    #+#             */
-/*   Updated: 2024/03/21 14:14:41 by bda-mota         ###   ########.fr       */
+/*   Updated: 2024/03/21 14:42:08 by bda-mota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,6 @@ int	get_stack_size(t_stack *stack)
 	curr = stack;
 	while (curr != NULL)
 	{
-		ft_printf("nó:%d\n", curr->value);
 		curr = curr->next;
 		count++;
 	}

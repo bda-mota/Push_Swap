@@ -6,7 +6,7 @@
 #    By: bda-mota <bda-mota@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/13 15:40:23 by bda-mota          #+#    #+#              #
-#    Updated: 2024/03/20 16:04:19 by bda-mota         ###   ########.fr        #
+#    Updated: 2024/03/21 14:51:10 by bda-mota         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ SRC_PATH 	:= sources
 OBJ_PATH 	:= objects
 
 # SOURCES
-CFILES		:= main.c utils.c linked_list.c swap.c rotate.c reverse_rotate.c push.c linked_list_aux.c push_swap.c
+CFILES		:= main.c utils.c linked_list.c swap.c rotate.c reverse_rotate.c push.c linked_list_aux.c push_swap.c index.c
 
 SRCS		:= $(addprefix $(SRC_PATH)/, $(CFILES))
 OBJS		:= $(addprefix $(OBJ_PATH)/, $(CFILES:%.c=%.o))

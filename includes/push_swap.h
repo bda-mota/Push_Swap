@@ -6,7 +6,7 @@
 /*   By: bda-mota <bda-mota@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 17:46:24 by bda-mota          #+#    #+#             */
-/*   Updated: 2024/03/21 14:15:14 by bda-mota         ###   ########.fr       */
+/*   Updated: 2024/03/21 14:48:15 by bda-mota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ typedef struct s_stack
 typedef struct push
 {
 	int		max_value;
+	int		min_value;
 	int		size_a;
 	int		size_b;
 	t_stack	*stack_a;
@@ -42,6 +43,7 @@ typedef struct push
 void	sort_three(t_push **push);
 void	push_swap(t_push **push);
 void	sort_many(t_push **push);
+void	put_index(t_push **stacks);
 
 //UTILS
 void	exit_error(void);
