@@ -6,15 +6,15 @@
 /*   By: bda-mota <bda-mota@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 17:45:58 by bda-mota          #+#    #+#             */
-/*   Updated: 2024/03/20 20:12:20 by bda-mota         ###   ########.fr       */
+/*   Updated: 2024/03/21 12:37:23 by bda-mota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
 static void	init_list(t_push **stacks);
-static void	check_args(t_push *stacks, int argc, char **argv);
-static int	check_list(t_push *stacks, int argc, char **argv);
+static void	check_args(int argc, char **argv);
+static void	check_list(t_push *stacks, int argc, char **argv);
 static void	transform_and_add(t_push *stacks, int argc, char **argv);
 
 int	main(int argc, char **argv)
@@ -23,7 +23,8 @@ int	main(int argc, char **argv)
 	t_stack	*curr;
 
 	init_list(&stacks);
-	check_args(stacks, argc, argv);
+	check_args(argc, argv);
+	check_list(stacks, argc, argv);
 	push_swap(&stacks);
 	curr = stacks->stack_a;
 	ft_printf("STACK A:\n");
@@ -54,7 +55,7 @@ static void	init_list(t_push **stacks)
 	(*stacks)->size_b = 0;
 }
 
-static void	check_args(t_push *stacks, int argc, char **argv)
+static void	check_args(int argc, char **argv)
 {
 	int	i;
 	int	j;
@@ -78,10 +79,9 @@ static void	check_args(t_push *stacks, int argc, char **argv)
 		}
 		i++;
 	}
-	check_list(stacks, argc, argv);
 }
 
-static int	check_list(t_push *stacks, int argc, char **argv)
+static void	check_list(t_push *stacks, int argc, char **argv)
 {
 	transform_and_add(stacks, argc, argv);
 	has_double(stacks);
@@ -90,7 +90,6 @@ static int	check_list(t_push *stacks, int argc, char **argv)
 		free_lists(stacks);
 		exit_error();
 	}
-	return (0);
 }
 
 static void	transform_and_add(t_push *stacks, int argc, char **argv)
