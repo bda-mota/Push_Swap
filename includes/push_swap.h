@@ -6,7 +6,7 @@
 /*   By: bda-mota <bda-mota@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 17:46:24 by bda-mota          #+#    #+#             */
-/*   Updated: 2024/03/20 20:03:19 by bda-mota         ###   ########.fr       */
+/*   Updated: 2024/03/21 14:15:14 by bda-mota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,7 @@ int		get_stack_size(t_stack *stack);
 int		get_max(t_stack *stack);
 int		get_min(t_stack *stack);
 t_stack	*stack_last(t_stack *lst);
+void remove_first(t_stack **stack);
 
 //SWAP
 void	swap(t_stack **stack);

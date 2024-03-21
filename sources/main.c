@@ -6,7 +6,7 @@
 /*   By: bda-mota <bda-mota@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 17:45:58 by bda-mota          #+#    #+#             */
-/*   Updated: 2024/03/21 12:37:23 by bda-mota         ###   ########.fr       */
+/*   Updated: 2024/03/21 14:15:26 by bda-mota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,26 +20,26 @@ static void	transform_and_add(t_push *stacks, int argc, char **argv);
 int	main(int argc, char **argv)
 {
 	t_push	*stacks;
-	t_stack	*curr;
+	//t_stack	*curr;
 
 	init_list(&stacks);
 	check_args(argc, argv);
 	check_list(stacks, argc, argv);
 	push_swap(&stacks);
-	curr = stacks->stack_a;
-	ft_printf("STACK A:\n");
-	while (curr)
-	{
-		ft_printf("%d\n", curr->value);
-		curr = curr->next;
-	}
-	ft_printf("STACK B:\n");
-	curr = stacks->stack_b;
-	while (curr)
-	{
-		ft_printf("%d\n", curr->value);
-		curr = curr->next;
-	}
+	// curr = stacks->stack_a;
+	// ft_printf("STACK A:\n");
+	// while (curr)
+	// {
+	// 	ft_printf("%d\n", curr->value);
+	// 	curr = curr->next;
+	// }
+	// ft_printf("STACK B:\n");
+	// curr = stacks->stack_b;
+	// while (curr)
+	// {
+	// 	ft_printf("%d\n", curr->value);
+	// 	curr = curr->next;
+	// }
 	free_lists(stacks);
 	return (0);
 }
@@ -98,6 +98,7 @@ static void	transform_and_add(t_push *stacks, int argc, char **argv)
 
 	i = 1;
 	init_stack(&stacks->stack_a);
+	remove_first(&stacks->stack_a);
 	while (i < argc)
 	{
 		if (ft_atol(argv[i]) > MAX_INT || ft_atol(argv[i]) < MIN_INT)
