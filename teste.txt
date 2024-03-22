@@ -15,3 +15,10 @@ push_b(push_swap);
 		ft_printf("%d\n", curr->value);
 		curr = curr->next;
 	}
+
+
+while (curr)
+	{
+		ft_printf("n: %d index: %d\n", curr->value, curr->index);
+		curr = curr->next;
+	}

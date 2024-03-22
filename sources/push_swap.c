@@ -6,7 +6,7 @@
 /*   By: bda-mota <bda-mota@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 14:55:40 by bda-mota          #+#    #+#             */
-/*   Updated: 2024/03/21 15:40:46 by bda-mota         ###   ########.fr       */
+/*   Updated: 2024/03/21 16:57:12 by bda-mota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,8 @@ void	push_swap(t_push **stacks)
 	else
 	{
 		put_index(stacks);
-		//sort_many(stacks);
+		media_and_push(stacks);
+		sort_many(stacks);
 	}
 }
 
@@ -36,7 +37,5 @@ void	sort_three(t_push **stacks)
 
 void	sort_many(t_push **stacks)
 {
-	while (get_stack_size((*stacks)->stack_a) > 3)
-		pb(*stacks);
 	sort_three(stacks);
 }
