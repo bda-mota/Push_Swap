@@ -6,7 +6,7 @@
 /*   By: bda-mota <bda-mota@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 14:55:40 by bda-mota          #+#    #+#             */
-/*   Updated: 2024/03/22 12:55:13 by bda-mota         ###   ########.fr       */
+/*   Updated: 2024/03/25 10:19:41 by bda-mota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,5 +39,6 @@ void	sort_three(t_push **stacks)
 void	sort_many(t_push **stacks)
 {
 	(void)stacks;
+	find_position(stacks);
 	return ;
 }
