@@ -6,7 +6,7 @@
 /*   By: bda-mota <bda-mota@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 16:56:11 by bda-mota          #+#    #+#             */
-/*   Updated: 2024/03/21 14:42:08 by bda-mota         ###   ########.fr       */
+/*   Updated: 2024/03/25 19:27:36 by bda-mota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,22 +74,6 @@ int	get_max(t_stack *stack)
 		curr = curr->next;
 	}
 	return (max);
-}
-
-int	get_min(t_stack *stack)
-{
-	t_stack	*curr;
-	int		min;
-
-	curr = stack;
-	min = curr->value;
-	while (curr)
-	{
-		if (curr->value < min)
-			min = curr->value;
-		curr = curr->next;
-	}
-	return (min);
 }
 
 void remove_first(t_stack **stack) 

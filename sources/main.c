@@ -6,7 +6,7 @@
 /*   By: bda-mota <bda-mota@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 17:45:58 by bda-mota          #+#    #+#             */
-/*   Updated: 2024/03/25 10:30:42 by bda-mota         ###   ########.fr       */
+/*   Updated: 2024/03/25 15:14:19 by bda-mota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,14 +30,14 @@ int	main(int argc, char **argv)
 	ft_printf("STACK A:\n");
 	while (curr)
 	{
-		ft_printf("%d\n", curr->pos);
+		ft_printf("%d\n", curr->index);
 		curr = curr->next;
 	}
 	ft_printf("STACK B:\n");
 	curr = stacks->stack_b;
 	while (curr)
 	{
-		ft_printf("%d\n", curr->pos);
+		ft_printf("%d\n", curr->target_pos);
 		curr = curr->next;
 	}
 	free_lists(stacks);

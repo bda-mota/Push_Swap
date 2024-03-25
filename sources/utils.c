@@ -6,7 +6,7 @@
 /*   By: bda-mota <bda-mota@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 12:39:36 by bda-mota          #+#    #+#             */
-/*   Updated: 2024/03/21 16:23:29 by bda-mota         ###   ########.fr       */
+/*   Updated: 2024/03/25 19:29:22 by bda-mota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,4 +42,17 @@ void	init_stack(t_stack **stack)
 	(*stack)->cost_a = 0;
 	(*stack)->cost_b = 0;
 	(*stack)->next = NULL;
+}
+
+int	calculate_media(t_stack *stack)
+{
+	int	result;
+	
+	result = 0;
+	while (stack)
+	{
+		result += stack->index;
+		stack = stack->next;
+	}
+	return (result);
 }

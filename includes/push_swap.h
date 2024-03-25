@@ -6,7 +6,7 @@
 /*   By: bda-mota <bda-mota@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 17:46:24 by bda-mota          #+#    #+#             */
-/*   Updated: 2024/03/25 10:24:43 by bda-mota         ###   ########.fr       */
+/*   Updated: 2024/03/25 19:27:53 by bda-mota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,6 @@ void	free_lists(t_push *push);
 int		is_ordered(t_stack *stack);
 int		get_stack_size(t_stack *stack);
 int		get_max(t_stack *stack);
-int		get_min(t_stack *stack);
 t_stack	*stack_last(t_stack *lst);
 void	remove_first(t_stack **stack);
 
@@ -89,5 +88,7 @@ void	rrb(t_push *push);
 void	media_and_push(t_push **stacks);
 void	put_index(t_push **stacks);
 void	find_position(t_push **stacks);
+void	find_target_pos(t_push **stacks);
+int		calculate_media(t_stack *stack);
 
 #endif
