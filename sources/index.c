@@ -6,7 +6,7 @@
 /*   By: bda-mota <bda-mota@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 14:43:01 by bda-mota          #+#    #+#             */
-/*   Updated: 2024/03/25 19:54:06 by bda-mota         ###   ########.fr       */
+/*   Updated: 2024/03/26 12:13:43 by bda-mota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,4 +56,17 @@ void	media_and_push(t_push **stacks)
 		else
 		ra(*stacks);
 	}
+}
+
+int	calculate_media_index(t_stack *stack)
+{
+	int	result;
+	
+	result = 0;
+	while (stack)
+	{
+		result += stack->index;
+		stack = stack->next;
+	}
+	return (result);
 }

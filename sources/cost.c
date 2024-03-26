@@ -6,13 +6,11 @@
 /*   By: bda-mota <bda-mota@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 19:31:09 by bda-mota          #+#    #+#             */
-/*   Updated: 2024/03/26 11:49:08 by bda-mota         ###   ########.fr       */
+/*   Updated: 2024/03/26 12:20:39 by bda-mota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
-
-static int	get_abs(int a, int b);
 
 void	calculate_costs(t_push **stacks)
 {
@@ -77,11 +75,18 @@ void	total_cost(t_push **stacks)
 	}	
 }
 
-static int	get_abs(int a, int b)
+int	find_cheaper(t_stack *stack_b)
 {
-	if (a < 0)
-		a *= -1;
-	if (b < 0)
-		b *= -1;
-	return (a + b);
+	t_stack *curr;
+	int		cheapier;
+	
+	curr = stack_b;
+	cheapier = curr->cost;
+	while (curr)
+	{
+		if (cheapier > curr->cost)
+			cheapier = curr->cost;
+		curr = curr->next;
+	}
+	return (cheapier);
 }

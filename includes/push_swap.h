@@ -6,7 +6,7 @@
 /*   By: bda-mota <bda-mota@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 17:46:24 by bda-mota          #+#    #+#             */
-/*   Updated: 2024/03/26 11:49:01 by bda-mota         ###   ########.fr       */
+/*   Updated: 2024/03/26 12:25:26 by bda-mota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,23 +49,27 @@ void	init_stack(t_stack **stack);
 void	sort_three(t_push **push);
 void	push_swap(t_push **push);
 void	sort_many(t_push **push);
+void	do_op(t_push **stacks);
 
 //UTILS
 void	exit_error(void);
 void	print_list(t_stack **stack);
-int		calculate_media_index(t_stack *stack);
+int		get_abs(int a, int b);
 
 //LINKED_LIST
 void	insert_beginning(t_stack **stack, t_stack *new);
 void	insert_end(t_stack **stack, int value);
 void	deallocate(t_stack **stack);
-void	has_double(t_push *push);
 void	free_lists(t_push *push);
+t_stack	*stack_last(t_stack *lst);
+
+//LINKED LIST AUX 
+void	has_double(t_push *push);
 int		is_ordered(t_stack *stack);
 int		get_stack_size(t_stack *stack);
 int		get_max(t_stack *stack);
-t_stack	*stack_last(t_stack *lst);
 void	remove_first(t_stack **stack);
+
 
 //SWAP
 void	swap(t_stack **stack);
@@ -89,9 +93,10 @@ void	rrr(t_push *push);
 void	rra(t_push *push);
 void	rrb(t_push *push);
 
-//INDEX, MEDIA AND POSITION
+//INDEX AND POSITION
 void	media_and_push(t_push **stacks);
 void	put_index(t_push **stacks);
+int		calculate_media_index(t_stack *stack);
 void	find_position(t_push **stacks);
 void	find_target_pos(t_push **stacks);
 
@@ -100,5 +105,6 @@ void	calculate_costs(t_push **stacks);
 void	calc_cost_a(t_stack *stack_a);
 void	calc_cost_b(t_stack *stack_b);
 void	total_cost(t_push **stacks);
+int		find_cheaper(t_stack *stack_b);
 
 #endif
