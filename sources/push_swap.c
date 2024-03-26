@@ -6,7 +6,7 @@
 /*   By: bda-mota <bda-mota@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 14:55:40 by bda-mota          #+#    #+#             */
-/*   Updated: 2024/03/25 11:26:30 by bda-mota         ###   ########.fr       */
+/*   Updated: 2024/03/25 20:31:01 by bda-mota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,5 +40,6 @@ void	sort_many(t_push **stacks)
 {
 	find_position(stacks);
 	find_target_pos(stacks);
+	calculate_costs(stacks);
 	return ;
 }

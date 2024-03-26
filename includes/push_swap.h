@@ -6,7 +6,7 @@
 /*   By: bda-mota <bda-mota@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 17:46:24 by bda-mota          #+#    #+#             */
-/*   Updated: 2024/03/25 19:27:53 by bda-mota         ###   ########.fr       */
+/*   Updated: 2024/03/25 20:28:50 by bda-mota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,10 @@ typedef struct push
 	t_stack	*stack_b;
 }	t_push;
 
+//INIT
+void	init_list(t_push **stacks);
+void	init_stack(t_stack **stack);
+
 //PUSH SWAP
 void	sort_three(t_push **push);
 void	push_swap(t_push **push);
@@ -48,7 +52,7 @@ void	sort_many(t_push **push);
 //UTILS
 void	exit_error(void);
 void	print_list(t_stack **stack);
-void	init_stack(t_stack **stack);
+int		calculate_media_index(t_stack *stack);
 
 //LINKED_LIST
 void	insert_beginning(t_stack **stack, t_stack *new);
@@ -89,6 +93,10 @@ void	media_and_push(t_push **stacks);
 void	put_index(t_push **stacks);
 void	find_position(t_push **stacks);
 void	find_target_pos(t_push **stacks);
-int		calculate_media(t_stack *stack);
+
+//COST
+void	calculate_costs(t_push **stacks);
+void	calc_cost_a(t_stack *stack_a);
+void	calc_cost_b(t_stack *stack_b);
 
 #endif

@@ -6,13 +6,12 @@
 /*   By: bda-mota <bda-mota@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 17:45:58 by bda-mota          #+#    #+#             */
-/*   Updated: 2024/03/25 15:14:19 by bda-mota         ###   ########.fr       */
+/*   Updated: 2024/03/25 20:38:35 by bda-mota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-static void	init_list(t_push **stacks);
 static void	check_args(int argc, char **argv);
 static void	check_list(t_push *stacks, int argc, char **argv);
 static void	transform_and_add(t_push *stacks, int argc, char **argv);
@@ -27,32 +26,28 @@ int	main(int argc, char **argv)
 	check_list(stacks, argc, argv);
 	push_swap(&stacks);
 	curr = stacks->stack_a;
+	ft_printf("--------------\n");
 	ft_printf("STACK A:\n");
+	ft_printf("--------------\n");
 	while (curr)
 	{
-		ft_printf("%d\n", curr->index);
+		ft_printf("index:%d\n", curr->index);
+		ft_printf("cost a:%d\n", curr->cost_a);
+		ft_printf("--------------\n");
 		curr = curr->next;
 	}
 	ft_printf("STACK B:\n");
+	ft_printf("--------------\n");
 	curr = stacks->stack_b;
 	while (curr)
 	{
-		ft_printf("%d\n", curr->target_pos);
+		ft_printf("index:%d\n", curr->index);
+		ft_printf("cost b:%d\n", curr->cost_b);
+		ft_printf("--------------\n");
 		curr = curr->next;
 	}
 	free_lists(stacks);
 	return (0);
-}
-
-static void	init_list(t_push **stacks)
-{
-	*stacks = malloc(sizeof(t_push));
-	if (*stacks == NULL)
-		exit(1);
-	(*stacks)->stack_a = NULL;
-	(*stacks)->stack_b = NULL;
-	(*stacks)->size_a = 0;
-	(*stacks)->size_b = 0;
 }
 
 static void	check_args(int argc, char **argv)

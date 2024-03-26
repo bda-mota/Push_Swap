@@ -6,7 +6,7 @@
 /*   By: bda-mota <bda-mota@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 14:43:01 by bda-mota          #+#    #+#             */
-/*   Updated: 2024/03/25 19:29:17 by bda-mota         ###   ########.fr       */
+/*   Updated: 2024/03/25 19:54:06 by bda-mota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void	media_and_push(t_push **stacks)
 		size = get_stack_size((*stacks)->stack_a);
 		if (size == 3)
 			break ;
-		result = calculate_media((*stacks)->stack_a);
+		result = calculate_media_index((*stacks)->stack_a);
 		media = result / size;
 		curr = (*stacks)->stack_a;
 		if (curr->index <= media)
