@@ -6,7 +6,7 @@
 /*   By: bda-mota <bda-mota@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 14:55:40 by bda-mota          #+#    #+#             */
-/*   Updated: 2024/03/26 12:23:19 by bda-mota         ###   ########.fr       */
+/*   Updated: 2024/03/26 15:26:25 by bda-mota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	push_swap(t_push **stacks)
 		put_index(stacks);
 		media_and_push(stacks);
 		sort_three(stacks);
-		sort_many(stacks);
+		//sort_many(stacks);
 	}
 }
 
@@ -38,19 +38,31 @@ void	sort_three(t_push **stacks)
 
 void	sort_many(t_push **stacks)
 {
-	// while ((*stacks)->stack_b != NULL 
-	// 	&& is_ordered((*stacks)->stack_a) != 1)
-	// {
+	while ((*stacks)->stack_b != NULL)
+	{
 		find_position(stacks);
 		find_target_pos(stacks);
 		calculate_costs(stacks);
 		total_cost(stacks);
-		find_cheaper((*stacks)->stack_b);
-		do_op(stacks);
-	//}
+		find_op(stacks);
+	}
 }
 
-void	do_op(t_push **stacks)
+void	find_op(t_push **stacks)
 {
-	
+	t_stack	*curr;
+	int		cheapier;
+
+	cheapier = 	find_cheaper((*stacks)->stack_b);
+	curr = (*stacks)->stack_b;
+	while (curr)
+	{
+		if (curr->cost == cheapier)
+		{
+			move_a(stacks, curr->target_pos);
+			move_b(stacks, curr->pos);
+			return ;
+		}	
+		curr = curr->next;
+	}
 }
