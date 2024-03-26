@@ -6,7 +6,7 @@
 /*   By: bda-mota <bda-mota@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 17:46:24 by bda-mota          #+#    #+#             */
-/*   Updated: 2024/03/25 20:28:50 by bda-mota         ###   ########.fr       */
+/*   Updated: 2024/03/26 11:49:01 by bda-mota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ typedef struct s_stack
 	int				target_pos;
 	int				cost_a;
 	int				cost_b;
+	int				cost;
 	struct s_stack	*next;
 }	t_stack;
 
@@ -98,5 +99,6 @@ void	find_target_pos(t_push **stacks);
 void	calculate_costs(t_push **stacks);
 void	calc_cost_a(t_stack *stack_a);
 void	calc_cost_b(t_stack *stack_b);
+void	total_cost(t_push **stacks);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: bda-mota <bda-mota@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 17:45:58 by bda-mota          #+#    #+#             */
-/*   Updated: 2024/03/25 20:38:35 by bda-mota         ###   ########.fr       */
+/*   Updated: 2024/03/26 10:43:48 by bda-mota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,8 @@ int	main(int argc, char **argv)
 	{
 		ft_printf("index:%d\n", curr->index);
 		ft_printf("cost b:%d\n", curr->cost_b);
+		ft_printf("target:%d\n", curr->target_pos);
+		ft_printf("total:%d\n", curr->cost);
 		ft_printf("--------------\n");
 		curr = curr->next;
 	}
