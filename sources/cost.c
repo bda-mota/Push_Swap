@@ -6,7 +6,7 @@
 /*   By: bda-mota <bda-mota@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 19:31:09 by bda-mota          #+#    #+#             */
-/*   Updated: 2024/03/26 12:20:39 by bda-mota         ###   ########.fr       */
+/*   Updated: 2024/03/28 17:47:27 by bda-mota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ void	total_cost(t_push **stacks)
 		curr_b = (*stacks)->stack_b;
 		while (curr_b)
 		{
-			if (curr_b->target_pos == curr_a->pos)
+			if (curr_b->target_pos == curr_a->index)
 				curr_b->cost = get_abs(curr_a->cost_a, curr_b->cost_b);
 			curr_b = curr_b->next;
 		}

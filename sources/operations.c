@@ -6,7 +6,7 @@
 /*   By: bda-mota <bda-mota@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 12:48:04 by bda-mota          #+#    #+#             */
-/*   Updated: 2024/03/28 13:08:13 by bda-mota         ###   ########.fr       */
+/*   Updated: 2024/03/28 18:53:15 by bda-mota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	moves(t_push **stacks, int target_pos, int pos_b)
 
 	curr_a = (*stacks)->stack_a;
 	curr_b = (*stacks)->stack_b;	
-	while (curr_a->pos != target_pos)
+	while (curr_a->index != target_pos)
 		curr_a = curr_a->next;
 	while (curr_b->pos != pos_b)
 		curr_b = curr_b->next;
@@ -54,7 +54,7 @@ void	move_a(t_push **stacks, int pos)
 	curr = (*stacks)->stack_a;
 	while (curr)
 	{
-		if (curr->pos == pos)
+		if (curr->index == pos)
 		{
 			while (curr->cost_a != 0)
 			{
@@ -97,7 +97,6 @@ void	move_b(t_push **stacks, int pos)
 					curr->cost_b--;
 				}
 			}
-			//pa(*stacks);
 			return ;
 		}
 		curr = curr->next;
