@@ -6,7 +6,7 @@
 /*   By: bda-mota <bda-mota@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 17:46:24 by bda-mota          #+#    #+#             */
-/*   Updated: 2024/03/26 13:23:48 by bda-mota         ###   ########.fr       */
+/*   Updated: 2024/03/28 12:56:09 by bda-mota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,4 +111,6 @@ int		find_cheaper(t_stack *stack_b);
 void	find_op(t_push **stacks);
 void	move_a(t_push **stacks, int pos);
 void	move_b(t_push **stacks, int pos);
+void	moves(t_push **stacks, int target_pos, int pos_b);
+
 #endif

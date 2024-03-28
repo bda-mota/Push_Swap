@@ -6,7 +6,7 @@
 /*   By: bda-mota <bda-mota@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 14:55:40 by bda-mota          #+#    #+#             */
-/*   Updated: 2024/03/26 15:26:25 by bda-mota         ###   ########.fr       */
+/*   Updated: 2024/03/28 16:40:05 by bda-mota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	push_swap(t_push **stacks)
 		put_index(stacks);
 		media_and_push(stacks);
 		sort_three(stacks);
-		//sort_many(stacks);
+		sort_many(stacks);
 	}
 }
 
@@ -59,8 +59,7 @@ void	find_op(t_push **stacks)
 	{
 		if (curr->cost == cheapier)
 		{
-			move_a(stacks, curr->target_pos);
-			move_b(stacks, curr->pos);
+			moves(stacks, curr->target_pos, curr->pos);
 			return ;
 		}	
 		curr = curr->next;
