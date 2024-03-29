@@ -6,13 +6,13 @@
 #    By: bda-mota <bda-mota@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/13 15:40:23 by bda-mota          #+#    #+#              #
-#    Updated: 2024/03/26 12:48:01 by bda-mota         ###   ########.fr        #
+#    Updated: 2024/03/28 21:35:52 by bda-mota         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
 NAME		:= push_swap
-CFLAGS		:= -Wextra -Wall -Werror -g3 -O0
+CFLAGS		:= -Wextra -Wall -Werror -g3 -O3
 
 # LIBRARIES_PATH
 LIBFT_PATH = ./libft

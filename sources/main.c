@@ -6,7 +6,7 @@
 /*   By: bda-mota <bda-mota@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 17:45:58 by bda-mota          #+#    #+#             */
-/*   Updated: 2024/03/28 21:13:26 by bda-mota         ###   ########.fr       */
+/*   Updated: 2024/03/28 21:34:39 by bda-mota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ int	main(int argc, char **argv)
 {
 	t_push	*stacks;
 
-	init_list(&stacks);
 	check_args(argc, argv);
+	init_list(&stacks);
 	check_list(stacks, argc, argv);
 	push_swap(&stacks);
 	free_lists(stacks);
