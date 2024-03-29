@@ -6,7 +6,7 @@
 /*   By: bda-mota <bda-mota@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 16:56:11 by bda-mota          #+#    #+#             */
-/*   Updated: 2024/03/25 19:27:36 by bda-mota         ###   ########.fr       */
+/*   Updated: 2024/03/28 20:38:18 by bda-mota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ int	get_max(t_stack *stack)
 	int		max;
 
 	curr = stack;
-	max = 0;
+	max = curr->value;
 	while (curr)
 	{
 		if (curr->value > max)

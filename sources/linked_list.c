@@ -6,7 +6,7 @@
 /*   By: bda-mota <bda-mota@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 16:54:40 by bda-mota          #+#    #+#             */
-/*   Updated: 2024/03/20 20:10:26 by bda-mota         ###   ########.fr       */
+/*   Updated: 2024/03/28 18:58:14 by bda-mota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,4 +71,3 @@ t_stack	*stack_last(t_stack *lst)
 		lst = lst->next;
 	return (lst);
 }
-

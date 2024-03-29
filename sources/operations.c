@@ -6,11 +6,29 @@
 /*   By: bda-mota <bda-mota@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 12:48:04 by bda-mota          #+#    #+#             */
-/*   Updated: 2024/03/28 18:53:15 by bda-mota         ###   ########.fr       */
+/*   Updated: 2024/03/28 20:36:11 by bda-mota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
+
+void	find_op(t_push **stacks)
+{
+	t_stack	*curr;
+	int		cheapier;
+
+	cheapier = 	find_cheaper((*stacks)->stack_b);
+	curr = (*stacks)->stack_b;
+	while (curr)
+	{
+		if (curr->cost == cheapier)
+		{
+			moves(stacks, curr->target_pos, curr->pos);
+			return ;
+		}	
+		curr = curr->next;
+	}
+}
 
 void	moves(t_push **stacks, int target_pos, int pos_b)
 {
