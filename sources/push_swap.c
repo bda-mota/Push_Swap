@@ -6,7 +6,7 @@
 /*   By: bda-mota <bda-mota@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 14:55:40 by bda-mota          #+#    #+#             */
-/*   Updated: 2024/03/28 21:11:06 by bda-mota         ###   ########.fr       */
+/*   Updated: 2024/04/01 19:51:51 by bda-mota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ static void	sort_stack_a(t_push **stacks)
 		curr = (*stacks)->stack_a;
 		find_position(stacks);
 		min = find_first((*stacks)->stack_a);
-		media = get_stack_size((*stacks)->stack_a) / 2;
+		media = (get_stack_size((*stacks)->stack_a) + 1) / 2;
 		while (curr)
 		{
 			if (curr->index == min)

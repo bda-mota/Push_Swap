@@ -6,22 +6,40 @@
 /*   By: bda-mota <bda-mota@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 12:48:04 by bda-mota          #+#    #+#             */
-/*   Updated: 2024/03/28 21:24:17 by bda-mota         ###   ########.fr       */
+/*   Updated: 2024/04/01 19:37:18 by bda-mota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
+int	find_index_cheaper(t_stack *stack_b, int value)
+{
+	t_stack *curr;
+	int		index;
+	
+	curr = stack_b;
+	index = curr->index;
+	while (curr)
+	{
+		if (curr->cost == value && index < curr->index)
+			index = curr->index;
+		curr = curr->next;
+	}
+	return (index);
+}
+
 void	find_op(t_push **stacks)
 {
 	t_stack	*curr;
 	int		cheapier;
+	int		index;
 
 	cheapier = 	find_cheaper((*stacks)->stack_b);
+	index = find_index_cheaper(((*stacks)->stack_b), cheapier);
 	curr = (*stacks)->stack_b;
 	while (curr)
 	{
-		if (curr->cost == cheapier)
+		if (curr->index == index)
 		{
 			moves(stacks, curr->target_pos, curr->pos);
 			return ;
@@ -41,27 +59,19 @@ void	moves(t_push **stacks, int target_pos, int pos_b)
 		curr_a = curr_a->next;
 	while (curr_b->pos != pos_b)
 		curr_b = curr_b->next;
-	while (curr_a->cost_a != 0 || curr_b->cost_b != 1)
+	while (curr_a->cost_a != 0 || curr_b->cost_b != 0)
 	{
 		if (curr_a->cost_a < 0 && curr_b->cost_b < 0)
-		{
-			rrr(*stacks);
-			curr_a->cost_a++;
-			curr_b->cost_b++;
-		}
-		else if (curr_a->cost_a > 0 && curr_b->cost_b > 1)
-		{
-			rr(*stacks);
-			curr_a->cost_a--;
-			curr_b->cost_b--;
-		}
+			update_rrr(stacks);
+		else if (curr_a->cost_a > 0 && curr_b->cost_b > 0)
+			update_rr(stacks);
 		else
 		{
 			move_a(stacks, target_pos);
 			move_b(stacks, pos_b);
 		}
 	}
-	if (curr_a->cost_a == 0 && curr_b->cost_b == 1)
+	if (curr_a->cost_a == 0 && curr_b->cost_b == 0)
 		pa(*stacks);
 }
 
@@ -102,14 +112,14 @@ void	move_b(t_push **stacks, int pos)
 	{
 		if (curr->pos == pos)
 		{
-			while (curr->cost_b != 1)
+			while (curr->cost_b != 0)
 			{
-				if (curr->cost_b < 1)
+				if (curr->cost_b < 0)
 				{
 					rrb(*stacks);
 					curr->cost_b++;
 				}	
-				else if (curr->cost_b > 1)
+				else if (curr->cost_b > 0)
 				{
 					rb(*stacks);
 					curr->cost_b--;

@@ -6,7 +6,7 @@
 /*   By: bda-mota <bda-mota@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 19:31:09 by bda-mota          #+#    #+#             */
-/*   Updated: 2024/03/28 17:47:27 by bda-mota         ###   ########.fr       */
+/*   Updated: 2024/04/01 19:52:30 by bda-mota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	calc_cost_a(t_stack *stack_a)
 	int		size;
 
 	size = get_stack_size(stack_a);
-	media = size / 2;
+	media = (size + 1) / 2;
 	curr = stack_a;
 	while (curr)
 	{
@@ -44,14 +44,14 @@ void	calc_cost_b(t_stack *stack_b)
 	int		size;
 
 	size = get_stack_size(stack_b);
-	media = size / 2;
+	media = (size + 1) / 2;
 	curr = stack_b;
 	while (curr)
 	{
 		if (curr->pos <= media)
-			curr->cost_b = curr->pos + 1;
+			curr->cost_b = curr->pos;
 		else
-			curr->cost_b = (size - curr->pos + 1) * -1;
+			curr->cost_b = (size - curr->pos) * -1;
 		curr = curr->next;
 	}
 }
