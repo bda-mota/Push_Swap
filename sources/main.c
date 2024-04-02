@@ -6,7 +6,7 @@
 /*   By: bda-mota <bda-mota@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 17:45:58 by bda-mota          #+#    #+#             */
-/*   Updated: 2024/04/01 20:28:00 by bda-mota         ###   ########.fr       */
+/*   Updated: 2024/04/02 16:09:28 by bda-mota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ static void	transform_and_add(t_push *stacks, int argc, char **argv);
 int	main(int argc, char **argv)
 {
 	t_push	*stacks;
+	
 	check_args(argc, argv);
 	init_list(&stacks);
 	check_list(stacks, argc, argv);
