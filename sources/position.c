@@ -6,7 +6,7 @@
 /*   By: bda-mota <bda-mota@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 10:22:53 by bda-mota          #+#    #+#             */
-/*   Updated: 2024/03/28 17:45:51 by bda-mota         ###   ########.fr       */
+/*   Updated: 2024/04/02 11:10:27 by bda-mota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,4 +54,25 @@ void	find_target_pos(t_push **stacks)
 		}
 		curr_b = curr_b->next;
 	}
+}
+
+int	get_min_position(t_stack *stack_a)
+{
+	t_stack	*curr;
+	int		min_index;
+	int		min_pos;
+
+	curr = stack_a;
+	min_index = MAX_INT;
+	min_pos = curr->pos;
+	while (curr)
+	{
+		if (curr->index < min_index)
+		{
+			min_index = curr->index;
+			min_pos = curr->pos;
+		}
+		curr = curr->next;
+	}
+	return (min_pos);
 }

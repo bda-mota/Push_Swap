@@ -6,7 +6,7 @@
 /*   By: bda-mota <bda-mota@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 17:46:24 by bda-mota          #+#    #+#             */
-/*   Updated: 2024/04/01 19:33:12 by bda-mota         ###   ########.fr       */
+/*   Updated: 2024/04/02 11:01:42 by bda-mota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,6 +98,7 @@ void	put_index(t_push **stacks);
 int		calculate_media_index(t_stack *stack);
 void	find_position(t_push **stacks);
 void	find_target_pos(t_push **stacks);
+int		get_min_position(t_stack *stack_a);
 
 //COST
 void	calculate_costs(t_push **stacks);

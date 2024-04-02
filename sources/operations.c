@@ -6,7 +6,7 @@
 /*   By: bda-mota <bda-mota@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 12:48:04 by bda-mota          #+#    #+#             */
-/*   Updated: 2024/04/01 19:37:18 by bda-mota         ###   ########.fr       */
+/*   Updated: 2024/04/02 11:19:10 by bda-mota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,14 +32,12 @@ void	find_op(t_push **stacks)
 {
 	t_stack	*curr;
 	int		cheapier;
-	int		index;
 
 	cheapier = 	find_cheaper((*stacks)->stack_b);
-	index = find_index_cheaper(((*stacks)->stack_b), cheapier);
 	curr = (*stacks)->stack_b;
 	while (curr)
 	{
-		if (curr->index == index)
+		if (curr->cost == cheapier)
 		{
 			moves(stacks, curr->target_pos, curr->pos);
 			return ;
@@ -59,7 +57,7 @@ void	moves(t_push **stacks, int target_pos, int pos_b)
 		curr_a = curr_a->next;
 	while (curr_b->pos != pos_b)
 		curr_b = curr_b->next;
-	while (curr_a->cost_a != 0 || curr_b->cost_b != 0)
+	while (curr_b != NULL)
 	{
 		if (curr_a->cost_a < 0 && curr_b->cost_b < 0)
 			update_rrr(stacks);
@@ -70,8 +68,9 @@ void	moves(t_push **stacks, int target_pos, int pos_b)
 			move_a(stacks, target_pos);
 			move_b(stacks, pos_b);
 		}
-	}
-	if (curr_a->cost_a == 0 && curr_b->cost_b == 0)
+		if (curr_a->cost_a == 0 && curr_b->cost_b == 0)
+			break ;
+	}	
 		pa(*stacks);
 }
 

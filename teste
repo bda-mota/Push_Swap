@@ -1,0 +1,14 @@
+ft_printf("------------\n STACK A: \n-----------\n");
+	curr = stacks->stack_a;
+	while (curr)
+	{
+		ft_printf("value: %d\n", curr->value);
+		curr = curr->next;
+	}
+	curr = stacks->stack_b;
+	ft_printf("------------\n STACK B: \n-----------\n");
+	while (curr)
+	{
+		ft_printf("index: %d\n", curr->index);
+		curr = curr->next;
+	}

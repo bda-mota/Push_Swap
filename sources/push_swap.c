@@ -6,14 +6,14 @@
 /*   By: bda-mota <bda-mota@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 14:55:40 by bda-mota          #+#    #+#             */
-/*   Updated: 2024/04/01 19:51:51 by bda-mota         ###   ########.fr       */
+/*   Updated: 2024/04/02 11:09:55 by bda-mota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
 static void	sort_stack_a(t_push **stacks);
-static int	find_first(t_stack *stack_a);
+//static int	find_first(t_stack *stack_a);
 
 void	push_swap(t_push **stacks)
 {
@@ -50,48 +50,47 @@ void	sort_many(t_push **stacks)
 		total_cost(stacks);
 		find_op(stacks);
 	}
+	find_position(stacks);
 	sort_stack_a(stacks);
 }
 
 static void	sort_stack_a(t_push **stacks)
 {
-	t_stack	*curr;
-	int		min;
-	int		media;
+	int		lowest_pos;
+	int		stack_size;
 
-	while (is_ordered((*stacks)->stack_a) == 0)
+	stack_size = get_stack_size((*stacks)->stack_a);
+	lowest_pos = get_min_position((*stacks)->stack_a);
+	if (lowest_pos > stack_size / 2)
 	{
-		curr = (*stacks)->stack_a;
-		find_position(stacks);
-		min = find_first((*stacks)->stack_a);
-		media = (get_stack_size((*stacks)->stack_a) + 1) / 2;
-		while (curr)
+		while (lowest_pos < stack_size)
 		{
-			if (curr->index == min)
-			{
-				if (curr->pos > media)
-					rra(*stacks);
-				else
-					ra(*stacks);
-				break ;
-			}
-			curr = curr->next;
+			rra(*stacks);
+			lowest_pos++;
+		}
+	}
+	else
+	{
+		while (lowest_pos > 0)
+		{
+			ra(*stacks);
+			lowest_pos--;
 		}
 	}
 }
 
-static int	find_first(t_stack *stack_a)
-{
-	t_stack	*curr;
-	int		min;
+// static int	find_first(t_stack *stack_a)
+// {
+// 	t_stack	*curr;
+// 	int		min;
 
-	curr = stack_a;
-	min = curr->index;
-	while (curr)
-	{
-		if (curr->index < min)
-			min = curr->index;
-		curr = curr->next;
-	}
-	return (min);
-}
+// 	curr = stack_a;
+// 	min = curr->index;
+// 	while (curr)
+// 	{
+// 		if (curr->index < min)
+// 			min = curr->index;
+// 		curr = curr->next;
+// 	}
+// 	return (min);
+// }
