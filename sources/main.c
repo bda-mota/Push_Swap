@@ -6,7 +6,7 @@
 /*   By: bda-mota <bda-mota@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 17:45:58 by bda-mota          #+#    #+#             */
-/*   Updated: 2024/04/02 16:09:28 by bda-mota         ###   ########.fr       */
+/*   Updated: 2024/04/02 16:31:33 by bda-mota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ static void	check_args(int argc, char **argv)
 	i = 1;
 	j = 0;
 	if (argc < 2)
-		exit_error();
+		exit(1);
 	while (argv[i] && i < argc)
 	{
 		if (ft_strcmp(argv[i], "") == 0)
@@ -61,7 +61,7 @@ static void	check_list(t_push *stacks, int argc, char **argv)
 	if (is_ordered(stacks->stack_a) == 1)
 	{
 		free_lists(stacks);
-		exit_error();
+		exit(1);
 	}
 }
 
