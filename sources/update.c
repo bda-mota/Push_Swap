@@ -6,7 +6,7 @@
 /*   By: bda-mota <bda-mota@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 19:18:13 by bda-mota          #+#    #+#             */
-/*   Updated: 2024/04/02 16:08:46 by bda-mota         ###   ########.fr       */
+/*   Updated: 2024/04/03 14:57:48 by bda-mota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	update_rrr(t_push **stacks, int a, int b)
 {
 	t_stack	*curr;
-	
+
 	curr = (*stacks)->stack_a;
 	while (curr && curr->index != a)
 		curr = curr->next;
@@ -30,7 +30,7 @@ void	update_rrr(t_push **stacks, int a, int b)
 void	update_rr(t_push **stacks, int a, int b)
 {
 	t_stack	*curr;
-	
+
 	curr = (*stacks)->stack_a;
 	while (curr && curr->index != a)
 		curr = curr->next;

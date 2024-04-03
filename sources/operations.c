@@ -6,7 +6,7 @@
 /*   By: bda-mota <bda-mota@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 12:48:04 by bda-mota          #+#    #+#             */
-/*   Updated: 2024/04/02 16:06:06 by bda-mota         ###   ########.fr       */
+/*   Updated: 2024/04/03 14:56:34 by bda-mota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int	find_index_cheaper(t_stack *stack_b, int value)
 {
-	t_stack *curr;
+	t_stack	*curr;
 	int		index;
-	
+
 	curr = stack_b;
 	index = curr->index;
 	while (curr)
@@ -33,7 +33,7 @@ void	find_op(t_push **stacks)
 	t_stack	*curr;
 	int		cheapier;
 
-	cheapier = 	find_cheaper((*stacks)->stack_b);
+	cheapier = find_cheaper((*stacks)->stack_b);
 	curr = (*stacks)->stack_b;
 	while (curr)
 	{
@@ -52,7 +52,7 @@ void	moves(t_push **stacks, int target_pos, int pos_b)
 	t_stack	*curr_b;
 
 	curr_a = (*stacks)->stack_a;
-	curr_b = (*stacks)->stack_b;	
+	curr_b = (*stacks)->stack_b;
 	while (curr_a->index != target_pos)
 		curr_a = curr_a->next;
 	while (curr_b->pos != pos_b)
@@ -67,14 +67,14 @@ void	moves(t_push **stacks, int target_pos, int pos_b)
 		move_b(stacks, pos_b);
 		if (curr_a->cost_a == 0 && curr_b->cost_b == 0)
 			break ;
-	}	
-		pa(*stacks);
+	}
+	pa(*stacks);
 }
 
 void	move_a(t_push **stacks, int pos)
 {
 	t_stack	*curr;
-	
+
 	curr = (*stacks)->stack_a;
 	while (curr)
 	{
@@ -86,12 +86,12 @@ void	move_a(t_push **stacks, int pos)
 				{
 					rra(*stacks);
 					curr->cost_a++;
-				}	
+				}
 				else if (curr->cost_a > 0)
 				{
 					ra(*stacks);
 					curr->cost_a--;
-				}	
+				}
 			}
 			return ;
 		}
@@ -102,7 +102,7 @@ void	move_a(t_push **stacks, int pos)
 void	move_b(t_push **stacks, int pos)
 {
 	t_stack	*curr;
-	
+
 	curr = (*stacks)->stack_b;
 	while (curr)
 	{
@@ -114,7 +114,7 @@ void	move_b(t_push **stacks, int pos)
 				{
 					rrb(*stacks);
 					curr->cost_b++;
-				}	
+				}
 				else if (curr->cost_b > 0)
 				{
 					rb(*stacks);

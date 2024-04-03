@@ -6,14 +6,13 @@
 /*   By: bda-mota <bda-mota@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 14:55:40 by bda-mota          #+#    #+#             */
-/*   Updated: 2024/04/02 12:57:58 by bda-mota         ###   ########.fr       */
+/*   Updated: 2024/04/03 14:57:32 by bda-mota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
 static void	sort_stack_a(t_push **stacks);
-//static int	find_first(t_stack *stack_a);
 
 void	push_swap(t_push **stacks)
 {
@@ -41,7 +40,6 @@ void	sort_three(t_push **stacks)
 
 void	sort_many(t_push **stacks)
 {
-	
 	while ((*stacks)->stack_b != NULL)
 	{
 		find_position(stacks);
@@ -78,19 +76,3 @@ static void	sort_stack_a(t_push **stacks)
 		}
 	}
 }
-
-// static int	find_first(t_stack *stack_a)
-// {
-// 	t_stack	*curr;
-// 	int		min;
-
-// 	curr = stack_a;
-// 	min = curr->index;
-// 	while (curr)
-// 	{
-// 		if (curr->index < min)
-// 			min = curr->index;
-// 		curr = curr->next;
-// 	}
-// 	return (min);
-// }

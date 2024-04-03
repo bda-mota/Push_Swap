@@ -6,7 +6,7 @@
 /*   By: bda-mota <bda-mota@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 19:31:09 by bda-mota          #+#    #+#             */
-/*   Updated: 2024/04/01 19:52:30 by bda-mota         ###   ########.fr       */
+/*   Updated: 2024/04/03 14:55:38 by bda-mota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ void	total_cost(t_push **stacks)
 {
 	t_stack	*curr_a;
 	t_stack	*curr_b;
-	
+
 	curr_a = (*stacks)->stack_a;
 	while (curr_a)
 	{
@@ -72,14 +72,14 @@ void	total_cost(t_push **stacks)
 			curr_b = curr_b->next;
 		}
 		curr_a = curr_a->next;
-	}	
+	}
 }
 
 int	find_cheaper(t_stack *stack_b)
 {
-	t_stack *curr;
+	t_stack	*curr;
 	int		cheapier;
-	
+
 	curr = stack_b;
 	cheapier = curr->cost;
 	while (curr)

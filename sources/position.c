@@ -6,7 +6,7 @@
 /*   By: bda-mota <bda-mota@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 10:22:53 by bda-mota          #+#    #+#             */
-/*   Updated: 2024/04/02 13:48:01 by bda-mota         ###   ########.fr       */
+/*   Updated: 2024/04/03 14:57:01 by bda-mota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	find_target_pos(t_push **stacks)
 {
 	t_stack	*curr_a;
 	t_stack	*curr_b;
-	
+
 	curr_b = (*stacks)->stack_b;
 	while (curr_b)
 	{
@@ -45,10 +45,10 @@ void	find_target_pos(t_push **stacks)
 		curr_a = (*stacks)->stack_a;
 		while (curr_a)
 		{
-			if (curr_b->index < curr_a->index && 
-				(curr_a->index < curr_b->target_pos || !curr_b->target_pos))
+			if (curr_b->index < curr_a->index
+				&& (curr_a->index < curr_b->target_pos || !curr_b->target_pos))
 			{
-				curr_b->target_pos = curr_a->index;				
+				curr_b->target_pos = curr_a->index;
 			}
 			curr_a = curr_a->next;
 		}

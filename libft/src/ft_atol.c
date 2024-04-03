@@ -6,12 +6,9 @@
 /*   By: bda-mota <bda-mota@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 18:31:47 by bda-mota          #+#    #+#             */
-/*   Updated: 2024/03/14 18:36:02 by bda-mota         ###   ########.fr       */
+/*   Updated: 2024/04/03 14:59:00 by bda-mota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
-
 
 #include "libft.h"
 
@@ -37,4 +34,3 @@ long int	ft_atol(const char *nptr)
 	}
 	return (result * sign);
 }
-

@@ -6,7 +6,7 @@
 /*   By: bda-mota <bda-mota@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 16:50:40 by bda-mota          #+#    #+#             */
-/*   Updated: 2024/03/20 20:13:53 by bda-mota         ###   ########.fr       */
+/*   Updated: 2024/04/03 14:59:55 by bda-mota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,6 @@ void	rb(t_push *stacks)
 	rotate(&stacks->stack_b);
 	ft_printf("rb\n");
 }
-
 
 void	rr(t_push *stacks)
 {
