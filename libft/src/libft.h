@@ -6,7 +6,7 @@
 /*   By: bda-mota <bda-mota@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 14:54:03 by bda-mota          #+#    #+#             */
-/*   Updated: 2024/03/14 18:38:07 by bda-mota         ###   ########.fr       */
+/*   Updated: 2024/04/04 14:33:28 by bda-mota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,20 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <stdarg.h>
+
+typedef struct s_gnl
+{
+	char			c;
+	struct s_gnl	*next;
+}	t_gnl;
+
+typedef struct s_find
+{
+	char	buffer[BUFFER_SIZE];
+	int		pos;
+	int		bytes;
+}	t_find;
+
 
 /*
 ********************************************************************************
@@ -102,5 +116,18 @@ int			ft_p_upper_hex(unsigned int n);
 int			ft_p_address(unsigned long p);
 int			ft_strlen_print(char *ptr);
 char		*ft_strchr_print(const char *s, int c);
+
+/* 
+*******************************************************************************
+								GET NEXT LINE
+*/
+
+char	*get_next_line(int fd);
+char	*ft_transform(t_gnl *root, int len);
+void	ft_insert_end(t_gnl **root, char c);
+void	ft_dealloc(t_gnl **root);
+int		ft_build_line(t_find *file, t_gnl **root, int bytes);
+int		ft_read_file(int fd, t_find *file, t_gnl **root);
+int		ft_lstchr(t_gnl *root);
 
 #endif
