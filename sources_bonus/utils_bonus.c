@@ -6,11 +6,13 @@
 /*   By: bda-mota <bda-mota@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/04 16:03:12 by bda-mota          #+#    #+#             */
-/*   Updated: 2024/04/04 16:42:19 by bda-mota         ###   ########.fr       */
+/*   Updated: 2024/04/04 16:48:09 by bda-mota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap_bonus.h"
+
+static void	invalid_input(char *op, t_push *stacks);
 
 void	exit_error(void)
 {
@@ -50,8 +52,11 @@ void	perform_input(char *op, t_push **stacks)
 	else if (ft_strcmp(op, "rrr\n") == 0)
 		rrr(*stacks);
 	else
-	{
-		free(op);
-		ft_print_error(*stacks);
-	}
+		invalid_input(op, *stacks);
+}
+
+static void	invalid_input(char *op, t_push *stacks)
+{
+	free(op);
+	ft_print_error(stacks);
 }

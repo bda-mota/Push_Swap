@@ -6,7 +6,7 @@
 /*   By: bda-mota <bda-mota@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 15:09:01 by bda-mota          #+#    #+#             */
-/*   Updated: 2024/04/04 14:31:43 by bda-mota         ###   ########.fr       */
+/*   Updated: 2024/04/04 16:46:00 by bda-mota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,6 +107,6 @@ int	ft_build_line(t_find *file, t_gnl **root, int bytes)
 		file->pos++;
 	}
 	if (file->pos == bytes)
-	file->pos = 0;
+		file->pos = 0;
 	return (len);
 }

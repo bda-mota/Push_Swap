@@ -6,7 +6,7 @@
 /*   By: bda-mota <bda-mota@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 14:54:03 by bda-mota          #+#    #+#             */
-/*   Updated: 2024/04/04 14:33:28 by bda-mota         ###   ########.fr       */
+/*   Updated: 2024/04/04 16:45:46 by bda-mota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,6 @@ typedef struct s_find
 	int		pos;
 	int		bytes;
 }	t_find;
-
 
 /*
 ********************************************************************************
@@ -122,12 +121,12 @@ char		*ft_strchr_print(const char *s, int c);
 								GET NEXT LINE
 */
 
-char	*get_next_line(int fd);
-char	*ft_transform(t_gnl *root, int len);
-void	ft_insert_end(t_gnl **root, char c);
-void	ft_dealloc(t_gnl **root);
-int		ft_build_line(t_find *file, t_gnl **root, int bytes);
-int		ft_read_file(int fd, t_find *file, t_gnl **root);
-int		ft_lstchr(t_gnl *root);
+char		*get_next_line(int fd);
+char		*ft_transform(t_gnl *root, int len);
+void		ft_insert_end(t_gnl **root, char c);
+void		ft_dealloc(t_gnl **root);
+int			ft_build_line(t_find *file, t_gnl **root, int bytes);
+int			ft_read_file(int fd, t_find *file, t_gnl **root);
+int			ft_lstchr(t_gnl *root);
 
 #endif
