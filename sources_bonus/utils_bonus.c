@@ -6,7 +6,7 @@
 /*   By: bda-mota <bda-mota@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/04 16:03:12 by bda-mota          #+#    #+#             */
-/*   Updated: 2024/04/04 16:16:20 by bda-mota         ###   ########.fr       */
+/*   Updated: 2024/04/04 16:42:19 by bda-mota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,13 @@
 void	exit_error(void)
 {
 	ft_putstr_fd("Error\n", STDERR_FILENO);
+	exit(EXIT_FAILURE);
+}
+
+void	ft_print_error(t_push *stacks)
+{
+	ft_putstr_fd("Error\n", STDERR_FILENO);
+	free_lists(stacks);
 	exit(EXIT_FAILURE);
 }
 
@@ -43,5 +50,8 @@ void	perform_input(char *op, t_push **stacks)
 	else if (ft_strcmp(op, "rrr\n") == 0)
 		rrr(*stacks);
 	else
-		exit_error();
+	{
+		free(op);
+		ft_print_error(*stacks);
+	}
 }

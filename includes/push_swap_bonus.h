@@ -6,7 +6,7 @@
 /*   By: bda-mota <bda-mota@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 17:46:24 by bda-mota          #+#    #+#             */
-/*   Updated: 2024/04/04 16:16:44 by bda-mota         ###   ########.fr       */
+/*   Updated: 2024/04/04 16:37:37 by bda-mota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ void	init_stack(t_stack **stack);
 
 //UTILS BONUS
 void	exit_error(void);
+void	ft_print_error(t_push *stacks);
 void	perform_input(char *op, t_push **stacks);
 
 //LINKED_LIST BONUS
