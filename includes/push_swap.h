@@ -6,7 +6,7 @@
 /*   By: bda-mota <bda-mota@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 17:46:24 by bda-mota          #+#    #+#             */
-/*   Updated: 2024/04/04 15:45:09 by bda-mota         ###   ########.fr       */
+/*   Updated: 2024/04/04 17:01:16 by bda-mota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,6 @@ void	init_stack(t_stack **stack);
 void	sort_three(t_push **push);
 void	push_swap(t_push **push);
 void	sort_many(t_push **push);
-void	do_op(t_push **stacks);
 
 //UTILS
 void	exit_error(void);
@@ -88,10 +87,12 @@ void	rrr(t_push *push);
 void	rra(t_push *push);
 void	rrb(t_push *push);
 
-//INDEX AND POSITION
-void	media_and_push(t_push **stacks);
+//INDEX 
 void	put_index(t_push **stacks);
+void	media_and_push(t_push **stacks);
 int		calculate_media_index(t_stack *stack);
+
+//POSITION
 void	find_position(t_push **stacks);
 void	find_target_pos(t_push **stacks);
 int		get_min_position(t_stack *stack_a);
@@ -112,6 +113,5 @@ void	moves(t_push **stacks, int target_pos, int pos_b);
 //UPDATE
 void	update_rrr(t_push **stacks, int a, int b);
 void	update_rr(t_push **stacks, int a, int b);
-int		find_index_cheaper(t_stack *stack_b, int value);
 
 #endif

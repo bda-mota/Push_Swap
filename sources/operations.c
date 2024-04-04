@@ -6,27 +6,11 @@
 /*   By: bda-mota <bda-mota@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 12:48:04 by bda-mota          #+#    #+#             */
-/*   Updated: 2024/04/03 14:56:34 by bda-mota         ###   ########.fr       */
+/*   Updated: 2024/04/04 16:56:35 by bda-mota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
-
-int	find_index_cheaper(t_stack *stack_b, int value)
-{
-	t_stack	*curr;
-	int		index;
-
-	curr = stack_b;
-	index = curr->index;
-	while (curr)
-	{
-		if (curr->cost == value && index < curr->index)
-			index = curr->index;
-		curr = curr->next;
-	}
-	return (index);
-}
 
 void	find_op(t_push **stacks)
 {
