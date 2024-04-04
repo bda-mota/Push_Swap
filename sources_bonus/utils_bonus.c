@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: bda-mota <bda-mota@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/14 12:39:36 by bda-mota          #+#    #+#             */
-/*   Updated: 2024/04/04 15:40:52 by bda-mota         ###   ########.fr       */
+/*   Created: 2024/04/04 16:03:12 by bda-mota          #+#    #+#             */
+/*   Updated: 2024/04/04 16:16:20 by bda-mota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,30 @@ void	exit_error(void)
 	exit(EXIT_FAILURE);
 }
 
-int	get_abs(int a, int b)
+void	perform_input(char *op, t_push **stacks)
 {
-	if (a < 0)
-		a *= -1;
-	if (b < 0)
-		b *= -1;
-	return (a + b);
+	if (ft_strcmp(op, "sa\n") == 0)
+		sa(*stacks);
+	else if (ft_strcmp(op, "sb\n") == 0)
+		sb(*stacks);
+	else if (ft_strcmp(op, "ss\n") == 0)
+		ss(*stacks);
+	else if (ft_strcmp(op, "pa\n") == 0)
+		pa(*stacks);
+	else if (ft_strcmp(op, "pb\n") == 0)
+		pb(*stacks);
+	else if (ft_strcmp(op, "ra\n") == 0)
+		ra(*stacks);
+	else if (ft_strcmp(op, "rb\n") == 0)
+		rb(*stacks);
+	else if (ft_strcmp(op, "rr\n") == 0)
+		rr(*stacks);
+	else if (ft_strcmp(op, "rra\n") == 0)
+		rra(*stacks);
+	else if (ft_strcmp(op, "rrb\n") == 0)
+		rrb(*stacks);
+	else if (ft_strcmp(op, "rrr\n") == 0)
+		rrr(*stacks);
+	else
+		exit_error();
 }

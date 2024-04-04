@@ -6,7 +6,7 @@
 /*   By: bda-mota <bda-mota@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/04 15:11:29 by bda-mota          #+#    #+#             */
-/*   Updated: 2024/04/04 15:30:14 by bda-mota         ###   ########.fr       */
+/*   Updated: 2024/04/04 16:19:02 by bda-mota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,18 @@ int	main(int argc, char **argv)
 	check_args(argc, argv);
 	init_list(&stacks);
 	check_list(stacks, argc, argv);
-	push_swap(&stacks);
+	op = get_next_line(0);
+	while (op)
+	{
+		perform_input(op, &stacks);
+		free(op);
+		op = get_next_line(0);
+	}
+	free(op);
+	if (is_ordered(stacks->stack_a) && stacks->stack_b == NULL)
+		ft_putstr_fd("OK\n", STDERR_FILENO);
+	else
+		ft_putstr_fd("KO\n", STDERR_FILENO);
 	free_lists(stacks);
 	return (0);
 }
@@ -59,11 +70,6 @@ static void	check_list(t_push *stacks, int argc, char **argv)
 {
 	transform_and_add(stacks, argc, argv);
 	has_double(stacks);
-	if (is_ordered(stacks->stack_a) == 1)
-	{
-		free_lists(stacks);
-		exit(1);
-	}
 }
 
 static void	transform_and_add(t_push *stacks, int argc, char **argv)

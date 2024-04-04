@@ -6,7 +6,7 @@
 /*   By: bda-mota <bda-mota@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 17:46:24 by bda-mota          #+#    #+#             */
-/*   Updated: 2024/04/04 15:46:55 by bda-mota         ###   ########.fr       */
+/*   Updated: 2024/04/04 16:16:44 by bda-mota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,14 +34,9 @@ typedef struct push
 void	init_list(t_push **stacks);
 void	init_stack(t_stack **stack);
 
-//PUSH SWAP BONUS
-void	sort_three(t_push **push);
-void	push_swap(t_push **push);
-void	sort_many(t_push **push);
-void	do_op(t_push **stacks);
-
 //UTILS BONUS
 void	exit_error(void);
+void	perform_input(char *op, t_push **stacks);
 
 //LINKED_LIST BONUS
 void	insert_beginning(t_stack **stack, t_stack *new);
