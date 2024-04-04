@@ -6,7 +6,7 @@
 /*   By: bda-mota <bda-mota@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 19:32:46 by bda-mota          #+#    #+#             */
-/*   Updated: 2024/04/04 15:15:14 by bda-mota         ###   ########.fr       */
+/*   Updated: 2024/04/04 15:44:39 by bda-mota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,6 @@ void	init_list(t_push **stacks)
 		exit(1);
 	(*stacks)->stack_a = NULL;
 	(*stacks)->stack_b = NULL;
-	(*stacks)->size_a = 0;
-	(*stacks)->size_b = 0;
 }
 
 void	init_stack(t_stack **stack)
@@ -29,10 +27,5 @@ void	init_stack(t_stack **stack)
 	if (!(*stack))
 		return ;
 	(*stack)->value = 0;
-	(*stack)->index = 0;
-	(*stack)->pos = 0;
-	(*stack)->target_pos = 0;
-	(*stack)->cost_a = 0;
-	(*stack)->cost_b = 0;
 	(*stack)->next = NULL;
 }

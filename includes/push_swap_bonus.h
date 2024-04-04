@@ -6,7 +6,7 @@
 /*   By: bda-mota <bda-mota@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 17:46:24 by bda-mota          #+#    #+#             */
-/*   Updated: 2024/04/04 15:42:08 by bda-mota         ###   ########.fr       */
+/*   Updated: 2024/04/04 15:46:55 by bda-mota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,22 +21,11 @@
 typedef struct s_stack
 {
 	int				value;
-	int				index;
-	int				pos;
-	int				target_pos;
-	int				cost_a;
-	int				cost_b;
-	int				cost;
 	struct s_stack	*next;
 }	t_stack;
 
 typedef struct push
 {
-	int		max_value;
-	int		min_value;
-	int		media;
-	int		size_a;
-	int		size_b;
 	t_stack	*stack_a;
 	t_stack	*stack_b;
 }	t_push;
