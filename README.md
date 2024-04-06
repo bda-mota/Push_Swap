@@ -63,6 +63,7 @@ Exemplo:
 output: sa
 
 
+
 ./checker 2 1 3
 input: sa
 
