@@ -6,7 +6,7 @@
 #    By: bda-mota <bda-mota@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/13 15:40:23 by bda-mota          #+#    #+#              #
-#    Updated: 2024/04/04 16:17:33 by bda-mota         ###   ########.fr        #
+#    Updated: 2024/04/08 14:20:59 by bda-mota         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -80,9 +80,9 @@ $(NAME_BONUS): $(LIBFT) $(OBJ_BONUS)
 	@echo "$(GREEN)----------------------------------------------"
 	@echo "$(WHITE)     The [$(PURPLE)PUSH SWAP BONUS$(WHITE)] has been compiled!  "
 	@echo "$(GREEN)----------------------------------------------"
-	
+
 clean:
-	@rm -rf $(OBJS) $(OBJ_BONUS) 
+	@rm -rf $(OBJS) $(OBJ_BONUS)
 	@echo "$(RED)-----------------------------------"
 	@echo "$(WHITE) Objects - PUSH SWAP - were cleaned!"
 	@echo "$(RED)-----------------------------------"

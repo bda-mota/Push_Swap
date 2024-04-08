@@ -6,7 +6,7 @@
 /*   By: bda-mota <bda-mota@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/04 15:11:29 by bda-mota          #+#    #+#             */
-/*   Updated: 2024/04/04 16:19:02 by bda-mota         ###   ########.fr       */
+/*   Updated: 2024/04/08 14:42:37 by bda-mota         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,11 +33,11 @@ int	main(int argc, char **argv)
 	}
 	free(op);
 	if (is_ordered(stacks->stack_a) && stacks->stack_b == NULL)
-		ft_putstr_fd("OK\n", STDERR_FILENO);
+		ft_putstr_fd("OK\n", STDOUT_FILENO);
 	else
-		ft_putstr_fd("KO\n", STDERR_FILENO);
+		ft_putstr_fd("KO\n", STDOUT_FILENO);
 	free_lists(stacks);
-	return (0);
+	exit(EXIT_SUCCESS);
 }
 
 static void	check_args(int argc, char **argv)
